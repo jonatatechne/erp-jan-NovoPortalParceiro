@@ -148,7 +148,7 @@
       "name": "UserRole",
       "attributes": [
         "id:java.lang.String",
-        "usuario:Usuario",
+        "user:User",
         "role:Role"
       ],
       "methods": [
@@ -160,11 +160,11 @@
       ],
       "position": {
         "x": 63,
-        "y": 25
+        "y": 25.000003814697266
       },
       "size": {
-        "width": 266.125,
-        "height": 192.28269958496094
+        "width": 265.90625,
+        "height": 188.67332458496094
       },
       "angle": 0,
       "isRest": "true",
@@ -238,14 +238,14 @@
           "isSearchable": false
         },
         {
-          "name": "usuario",
-          "type": "Usuario",
+          "name": "user",
+          "type": "User",
           "dbName": "fk_user",
           "dbLength": "",
           "dbPrecision": "",
           "dbScale": "",
           "dbDefaultValue": "",
-          "label": "Usuario",
+          "label": "User",
           "mask": "",
           "isPrimaryKey": false,
           "isUniqueKey": false,
@@ -315,12 +315,12 @@
         ".uml-class-attrs-text": {
           "fill": "#000",
           "font-size": 11,
-          "text": "id\nusuario\nrole\n"
+          "text": "id\nuser\nrole\n"
         },
         ".uml-class-attrs-value": {
-          "ref-x": 171.09375,
+          "ref-x": 171.5,
           "font-size": 11,
-          "text": "java.lang.String\nUsuario\nRole\n"
+          "text": "java.lang.String\nUser\nRole\n"
         },
         ".uml-class-methods-text": {
           "fill": "#0066FF",
@@ -334,7 +334,7 @@
     },
     {
       "type": "uml.Class",
-      "name": "Usuario",
+      "name": "User",
       "attributes": [
         "id:java.lang.String",
         "login:java.lang.String",
@@ -347,16 +347,16 @@
         "alteracao:java.sql.Timestamp"
       ],
       "methods": [
-        "+ list(): List<Usuario>",
-        "+ findByRole(roleid:String): List<Usuario>",
-        "+ findByLogin(login:String): List<Usuario>"
+        "+ list(): List<User>",
+        "+ findByRole(roleid:String): List<User>",
+        "+ findByLogin(login:String): List<User>"
       ],
       "position": {
-        "x": 215,
+        "x": 215.00003051757812,
         "y": 296
       },
       "size": {
-        "width": 254.34375,
+        "width": 239.671875,
         "height": 218.12835693359375
       },
       "angle": 0,
@@ -621,7 +621,7 @@
         ".uml-class-name-text": {
           "fill": "#000",
           "font-size": 12,
-          "text": "Usuario",
+          "text": "User",
           "font-weight": "bold"
         },
         ".uml-class-attrs-text": {
@@ -629,14 +629,14 @@
           "text": "id\nlogin\npassword\nativo\ntelefones\nemail\nskype\nnome\nalteracao\n"
         },
         ".uml-class-attrs-value": {
-          "ref-x": 141.4375,
+          "ref-x": 126.765625,
           "font-size": 11,
           "text": "java.lang.String\njava.lang.String\njava.lang.String\njava.lang.Boolean\njava.util.Set\njava.lang.String\njava.lang.String\njava.lang.String\njava.sql.Timestamp\n"
         },
         ".uml-class-methods-text": {
           "fill": "#0066FF",
           "font-size": 11,
-          "text": "+ list(): List<Usuario>\n+ findByRole(roleid:String): List<Usuario>\n+ findByLogin(login:String): List<Usuario>"
+          "text": "+ list(): List<User>\n+ findByRole(roleid:String): List<User>\n+ findByLogin(login:String): List<User>"
         },
         ".": {
           "display": "normal"
@@ -653,7 +653,7 @@
         "id": "d2e50f97-0b9e-4037-94ba-af64568af247"
       },
       "relationFields": [
-        "usuario:target"
+        "user:target"
       ],
       "id": "c147a7db-5dfc-4dba-b7c2-78749c21414c",
       "labels": [
@@ -745,7 +745,7 @@
         "mercadoAlvo:java.lang.String",
         "clientesAtuais:java.lang.String",
         "motivo:java.lang.String",
-        "usuario:Usuario",
+        "user:User",
         "endereco:Endereco",
         "nomeFantasia:java.lang.String",
         "website:java.lang.String",
@@ -759,12 +759,12 @@
         "+ list(): List<Parceiro>"
       ],
       "position": {
-        "x": 578,
+        "x": 578.0000610351562,
         "y": 258
       },
       "size": {
-        "width": 259.03125,
-        "height": 306.2089538574219
+        "width": 257.40625,
+        "height": 305.9042663574219
       },
       "angle": 0,
       "multitenantContextJsonIgnore": "false",
@@ -1020,14 +1020,14 @@
           "isSearchable": false
         },
         {
-          "name": "usuario",
-          "type": "Usuario",
-          "dbName": "fk_usuario",
+          "name": "user",
+          "type": "User",
+          "dbName": "fk_user",
           "dbLength": "",
           "dbPrecision": "",
           "dbScale": "",
           "dbDefaultValue": "",
-          "label": "Usuario",
+          "label": "User",
           "mask": "",
           "isPrimaryKey": false,
           "isUniqueKey": false,
@@ -1254,12 +1254,12 @@
         },
         ".uml-class-attrs-text": {
           "font-size": 11,
-          "text": "id\ncpfCnpj\ninscricaoEstadual\nrazaoSocialNome\ncompetencias\nnumeroColaboradores\nprodutosServicos\nmercadoAlvo\nclientesAtuais\nmotivo\nusuario\nendereco\nnomeFantasia\nwebsite\ntelefone\ndataCadastro\ndescricaoEmpresa\nnivelParceria\ndataAlteracao\n"
+          "text": "id\ncpfCnpj\ninscricaoEstadual\nrazaoSocialNome\ncompetencias\nnumeroColaboradores\nprodutosServicos\nmercadoAlvo\nclientesAtuais\nmotivo\nuser\nendereco\nnomeFantasia\nwebsite\ntelefone\ndataCadastro\ndescricaoEmpresa\nnivelParceria\ndataAlteracao\n"
         },
         ".uml-class-attrs-value": {
-          "ref-x": 145.875,
+          "ref-x": 144.5,
           "font-size": 11,
-          "text": "java.lang.String\njava.lang.String\njava.lang.String\njava.lang.String\njava.lang.String\njava.lang.Integer\njava.lang.String\njava.lang.String\njava.lang.String\njava.lang.String\nUsuario\nEndereco\njava.lang.String\njava.lang.String\njava.lang.String\njava.util.Date\njava.lang.String\njava.lang.String\njava.sql.Timestamp\n"
+          "text": "java.lang.String\njava.lang.String\njava.lang.String\njava.lang.String\njava.lang.String\njava.lang.Integer\njava.lang.String\njava.lang.String\njava.lang.String\njava.lang.String\nUser\nEndereco\njava.lang.String\njava.lang.String\njava.lang.String\njava.util.Date\njava.lang.String\njava.lang.String\njava.sql.Timestamp\n"
         },
         ".uml-class-methods-text": {
           "fill": "#0066FF",
@@ -1841,7 +1841,7 @@
     {
       "type": "uml.Composition",
       "relationFields": [
-        "usuario:source"
+        "user:source"
       ],
       "associationType": "Association",
       "name": null,
