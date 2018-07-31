@@ -336,11 +336,15 @@
       "type": "uml.Class",
       "name": "Usuario",
       "attributes": [
-        "email:java.lang.String",
         "id:java.lang.String",
         "login:java.lang.String",
-        "senha:java.lang.String",
-        "ativo:java.lang.String"
+        "password:java.lang.String",
+        "ativo:java.lang.Boolean",
+        "telefones:java.util.Set",
+        "email:java.lang.String",
+        "skype:java.lang.String",
+        "nome:java.lang.String",
+        "alteracao:java.sql.Timestamp"
       ],
       "methods": [
         "+ list(): List<Usuario>",
@@ -348,12 +352,12 @@
         "+ findByLogin(login:String): List<Usuario>"
       ],
       "position": {
-        "x": 185,
-        "y": 292
+        "x": 215,
+        "y": 296
       },
       "size": {
-        "width": 254.875,
-        "height": 174.1290512084961
+        "width": 254.34375,
+        "height": 218.12835693359375
       },
       "angle": 0,
       "isRest": "true",
@@ -387,29 +391,6 @@
         }
       ],
       "fields": [
-        {
-          "name": "email",
-          "type": "java.lang.String",
-          "dbName": "email",
-          "dbLength": "",
-          "dbPrecision": "",
-          "dbScale": "",
-          "dbDefaultValue": "",
-          "label": "Email",
-          "mask": "",
-          "isPrimaryKey": false,
-          "isUniqueKey": false,
-          "isNullable": true,
-          "pkType": "",
-          "multitenantContext": "",
-          "jsonIgnore": false,
-          "isTransient": false,
-          "isInsertable": true,
-          "isUpdatable": true,
-          "isEncryption": false,
-          "referencedColumnName": "",
-          "isSearchable": false
-        },
         {
           "name": "id",
           "type": "java.lang.String",
@@ -457,14 +438,14 @@
           "isSearchable": false
         },
         {
-          "name": "senha",
+          "name": "password",
           "type": "java.lang.String",
-          "dbName": "senha",
+          "dbName": "password",
           "dbLength": "",
           "dbPrecision": "",
           "dbScale": "",
           "dbDefaultValue": "",
-          "label": "Senha",
+          "label": "Password",
           "mask": "",
           "isPrimaryKey": false,
           "isUniqueKey": false,
@@ -481,7 +462,7 @@
         },
         {
           "name": "ativo",
-          "type": "java.lang.String",
+          "type": "java.lang.Boolean",
           "dbName": "ativo",
           "dbLength": "",
           "dbPrecision": "",
@@ -491,7 +472,122 @@
           "mask": "",
           "isPrimaryKey": false,
           "isUniqueKey": false,
+          "isNullable": false,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "referencedColumnName": "",
+          "isSearchable": false
+        },
+        {
+          "name": "telefones",
+          "type": "java.util.Set",
+          "dbName": "telefones",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "",
+          "label": "Telefones",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
           "isNullable": true,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "referencedColumnName": "",
+          "isSearchable": false
+        },
+        {
+          "name": "email",
+          "type": "java.lang.String",
+          "dbName": "email",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "",
+          "label": "Email",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": false,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "referencedColumnName": "",
+          "isSearchable": false
+        },
+        {
+          "name": "skype",
+          "type": "java.lang.String",
+          "dbName": "skype",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "",
+          "label": "Skype",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": true,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "referencedColumnName": "",
+          "isSearchable": false
+        },
+        {
+          "name": "nome",
+          "type": "java.lang.String",
+          "dbName": "nome",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "",
+          "label": "Nome",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": false,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "referencedColumnName": "",
+          "isSearchable": false
+        },
+        {
+          "name": "alteracao",
+          "type": "java.sql.Timestamp",
+          "dbName": "alteracao",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "",
+          "label": "Alteracao",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": false,
           "pkType": "",
           "multitenantContext": "",
           "jsonIgnore": false,
@@ -515,12 +611,12 @@
           "transform": "translate(0,0)"
         },
         ".uml-class-attrs-rect": {
-          "height": 130,
+          "height": 210,
           "transform": "translate(0,50)"
         },
         ".uml-class-methods-rect": {
           "height": 90,
-          "transform": "translate(0,180)"
+          "transform": "translate(0,260)"
         },
         ".uml-class-name-text": {
           "fill": "#000",
@@ -530,12 +626,12 @@
         },
         ".uml-class-attrs-text": {
           "font-size": 11,
-          "text": "email\nid\nlogin\nsenha\nativo\n"
+          "text": "id\nlogin\npassword\nativo\ntelefones\nemail\nskype\nnome\nalteracao\n"
         },
         ".uml-class-attrs-value": {
-          "ref-x": 161.0625,
+          "ref-x": 141.4375,
           "font-size": 11,
-          "text": "java.lang.String\njava.lang.String\njava.lang.String\njava.lang.String\njava.lang.String\n"
+          "text": "java.lang.String\njava.lang.String\njava.lang.String\njava.lang.Boolean\njava.util.Set\njava.lang.String\njava.lang.String\njava.lang.String\njava.sql.Timestamp\n"
         },
         ".uml-class-methods-text": {
           "fill": "#0066FF",
@@ -640,30 +736,35 @@
       "name": "Parceiro",
       "attributes": [
         "id:java.lang.String",
-        "cnpj:java.lang.String",
-        "inscricao:java.lang.String",
-        "razao:java.lang.String",
+        "cpfCnpj:java.lang.String",
+        "inscricaoEstadual:java.lang.String",
+        "razaoSocialNome:java.lang.String",
         "competencias:java.lang.String",
-        "colaboradores:java.lang.String",
+        "numeroColaboradores:java.lang.Integer",
         "produtosServicos:java.lang.String",
-        "mercado:java.lang.String",
+        "mercadoAlvo:java.lang.String",
         "clientesAtuais:java.lang.String",
         "motivo:java.lang.String",
         "usuario:Usuario",
         "endereco:Endereco",
-        "contato:Contato",
-        "nomeFantasia:java.lang.String"
+        "nomeFantasia:java.lang.String",
+        "website:java.lang.String",
+        "telefone:java.lang.String",
+        "dataCadastro:java.util.Date",
+        "descricaoEmpresa:java.lang.String",
+        "nivelParceria:java.lang.String",
+        "dataAlteracao:java.sql.Timestamp"
       ],
       "methods": [
         "+ list(): List<Parceiro>"
       ],
       "position": {
-        "x": 536,
-        "y": 27
+        "x": 578,
+        "y": 258
       },
       "size": {
-        "width": 213.296875,
-        "height": 250.81288146972656
+        "width": 259.03125,
+        "height": 306.2089538574219
       },
       "angle": 0,
       "multitenantContextJsonIgnore": "false",
@@ -712,14 +813,37 @@
           "isSearchable": false
         },
         {
-          "name": "cnpj",
+          "name": "cpfCnpj",
           "type": "java.lang.String",
-          "dbName": "cnpj",
+          "dbName": "cpfCnpj",
           "dbLength": "",
           "dbPrecision": "",
           "dbScale": "",
           "dbDefaultValue": "",
-          "label": "Cnpj",
+          "label": "Cpf Cnpj",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": false,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "referencedColumnName": "",
+          "isSearchable": false
+        },
+        {
+          "name": "inscricaoEstadual",
+          "type": "java.lang.String",
+          "dbName": "inscricaoEstadual",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "",
+          "label": "Inscricao Estadual",
           "mask": "",
           "isPrimaryKey": false,
           "isUniqueKey": false,
@@ -735,41 +859,18 @@
           "isSearchable": false
         },
         {
-          "name": "inscricao",
+          "name": "razaoSocialNome",
           "type": "java.lang.String",
-          "dbName": "inscricao",
+          "dbName": "razaoSocialNome",
           "dbLength": "",
           "dbPrecision": "",
           "dbScale": "",
           "dbDefaultValue": "",
-          "label": "Inscricao",
+          "label": "Razao Social Nome",
           "mask": "",
           "isPrimaryKey": false,
           "isUniqueKey": false,
-          "isNullable": true,
-          "pkType": "",
-          "multitenantContext": "",
-          "jsonIgnore": false,
-          "isTransient": false,
-          "isInsertable": true,
-          "isUpdatable": true,
-          "isEncryption": false,
-          "referencedColumnName": "",
-          "isSearchable": false
-        },
-        {
-          "name": "razao",
-          "type": "java.lang.String",
-          "dbName": "razao",
-          "dbLength": "",
-          "dbPrecision": "",
-          "dbScale": "",
-          "dbDefaultValue": "",
-          "label": "Razao",
-          "mask": "",
-          "isPrimaryKey": false,
-          "isUniqueKey": false,
-          "isNullable": true,
+          "isNullable": false,
           "pkType": "",
           "multitenantContext": "",
           "jsonIgnore": false,
@@ -804,14 +905,14 @@
           "isSearchable": false
         },
         {
-          "name": "colaboradores",
-          "type": "java.lang.String",
-          "dbName": "colaboradores",
+          "name": "numeroColaboradores",
+          "type": "java.lang.Integer",
+          "dbName": "numeroColaboradores",
           "dbLength": "",
           "dbPrecision": "",
           "dbScale": "",
           "dbDefaultValue": "",
-          "label": "Colaboradores",
+          "label": "Numero Colaboradores",
           "mask": "",
           "isPrimaryKey": false,
           "isUniqueKey": false,
@@ -850,14 +951,14 @@
           "isSearchable": false
         },
         {
-          "name": "mercado",
+          "name": "mercadoAlvo",
           "type": "java.lang.String",
-          "dbName": "mercado",
+          "dbName": "mercadoAlvo",
           "dbLength": "",
           "dbPrecision": "",
           "dbScale": "",
           "dbDefaultValue": "",
-          "label": "Mercado",
+          "label": "Mercado Alvo",
           "mask": "",
           "isPrimaryKey": false,
           "isUniqueKey": false,
@@ -926,7 +1027,7 @@
           "dbPrecision": "",
           "dbScale": "",
           "dbDefaultValue": "",
-          "label": "",
+          "label": "Usuario",
           "mask": "",
           "isPrimaryKey": false,
           "isUniqueKey": false,
@@ -949,30 +1050,7 @@
           "dbPrecision": "",
           "dbScale": "",
           "dbDefaultValue": "",
-          "label": "",
-          "mask": "",
-          "isPrimaryKey": false,
-          "isUniqueKey": false,
-          "isNullable": true,
-          "pkType": "",
-          "multitenantContext": "",
-          "jsonIgnore": false,
-          "isTransient": false,
-          "isInsertable": true,
-          "isUpdatable": true,
-          "isEncryption": false,
-          "referencedColumnName": "",
-          "isSearchable": false
-        },
-        {
-          "name": "contato",
-          "type": "Contato",
-          "dbName": "fk_contato",
-          "dbLength": "",
-          "dbPrecision": "",
-          "dbScale": "",
-          "dbDefaultValue": "",
-          "label": "",
+          "label": "Endereco",
           "mask": "",
           "isPrimaryKey": false,
           "isUniqueKey": false,
@@ -1009,6 +1087,144 @@
           "isEncryption": false,
           "referencedColumnName": "",
           "isSearchable": false
+        },
+        {
+          "name": "website",
+          "type": "java.lang.String",
+          "dbName": "website",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "",
+          "label": "Website",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": true,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "referencedColumnName": "",
+          "isSearchable": false
+        },
+        {
+          "name": "telefone",
+          "type": "java.lang.String",
+          "dbName": "telefone",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "",
+          "label": "Telefone",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": true,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "referencedColumnName": "",
+          "isSearchable": false
+        },
+        {
+          "name": "dataCadastro",
+          "type": "java.util.Date",
+          "dbName": "dataCadastro",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "",
+          "label": "Data Cadastro",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": false,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "referencedColumnName": "",
+          "isSearchable": false
+        },
+        {
+          "name": "descricaoEmpresa",
+          "type": "java.lang.String",
+          "dbName": "descricaoEmpresa",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "",
+          "label": "Descricao Empresa",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": true,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "referencedColumnName": "",
+          "isSearchable": false
+        },
+        {
+          "name": "nivelParceria",
+          "type": "java.lang.String",
+          "dbName": "nivelParceria",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "",
+          "label": "Nivel Parceria",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": true,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "referencedColumnName": "",
+          "isSearchable": false
+        },
+        {
+          "name": "dataAlteracao",
+          "type": "java.sql.Timestamp",
+          "dbName": "dataAlteracao",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "",
+          "label": "Data Alteracao",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": false,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "referencedColumnName": "",
+          "isSearchable": false
         }
       ],
       "runtimeClass": "cronos.widgets.joint.uml.Class",
@@ -1023,12 +1239,12 @@
           "transform": "translate(0,0)"
         },
         ".uml-class-attrs-rect": {
-          "height": 310,
+          "height": 410,
           "transform": "translate(0,50)"
         },
         ".uml-class-methods-rect": {
           "height": 50,
-          "transform": "translate(0,360)"
+          "transform": "translate(0,460)"
         },
         ".uml-class-name-text": {
           "fill": "#000",
@@ -1038,12 +1254,12 @@
         },
         ".uml-class-attrs-text": {
           "font-size": 11,
-          "text": "id\ncnpj\ninscricao\nrazao\ncompetencias\ncolaboradores\nprodutosServicos\nmercado\nclientesAtuais\nmotivo\nusuario\nendereco\ncontato\nnomeFantasia\n"
+          "text": "id\ncpfCnpj\ninscricaoEstadual\nrazaoSocialNome\ncompetencias\nnumeroColaboradores\nprodutosServicos\nmercadoAlvo\nclientesAtuais\nmotivo\nusuario\nendereco\nnomeFantasia\nwebsite\ntelefone\ndataCadastro\ndescricaoEmpresa\nnivelParceria\ndataAlteracao\n"
         },
         ".uml-class-attrs-value": {
-          "ref-x": 119.484375,
+          "ref-x": 145.875,
           "font-size": 11,
-          "text": "java.lang.String\njava.lang.String\njava.lang.String\njava.lang.String\njava.lang.String\njava.lang.String\njava.lang.String\njava.lang.String\njava.lang.String\njava.lang.String\nUsuario\nEndereco\nContato\njava.lang.String\n"
+          "text": "java.lang.String\njava.lang.String\njava.lang.String\njava.lang.String\njava.lang.String\njava.lang.Integer\njava.lang.String\njava.lang.String\njava.lang.String\njava.lang.String\nUsuario\nEndereco\njava.lang.String\njava.lang.String\njava.lang.String\njava.util.Date\njava.lang.String\njava.lang.String\njava.sql.Timestamp\n"
         },
         ".uml-class-methods-text": {
           "fill": "#0066FF",
@@ -1063,12 +1279,12 @@
         "+ list(): List<Estado>"
       ],
       "position": {
-        "x": 35,
-        "y": 765
+        "x": 290,
+        "y": 913
       },
       "size": {
-        "width": 165.046875,
-        "height": 121.82215118408203
+        "width": 162.171875,
+        "height": 119.88465118408203
       },
       "angle": 0,
       "multitenantContextJsonIgnore": "false",
@@ -1170,7 +1386,7 @@
           "text": "id\nnome\n"
         },
         ".uml-class-attrs-value": {
-          "ref-x": 63.71875,
+          "ref-x": 62.03125,
           "font-size": 11,
           "text": "java.lang.Integer\njava.lang.String\n"
         },
@@ -1193,12 +1409,12 @@
         "+ list(): List<Cidade>"
       ],
       "position": {
-        "x": 28,
-        "y": 568
+        "x": 291,
+        "y": 680
       },
       "size": {
-        "width": 170.5625,
-        "height": 132.66735076904297
+        "width": 167.6875,
+        "height": 130.72985076904297
       },
       "angle": 0,
       "multitenantContextJsonIgnore": "false",
@@ -1323,7 +1539,7 @@
           "text": "id\nnome\nestado\n"
         },
         ".uml-class-attrs-value": {
-          "ref-x": 69.234375,
+          "ref-x": 67.546875,
           "font-size": 11,
           "text": "java.lang.Integer\njava.lang.String\nEstado\n"
         },
@@ -1393,12 +1609,12 @@
         "+ list(): List<Endereco>"
       ],
       "position": {
-        "x": 363,
-        "y": 506
+        "x": 610,
+        "y": 658
       },
       "size": {
-        "width": 197.265625,
-        "height": 176.2774887084961
+        "width": 194.921875,
+        "height": 174.3399887084961
       },
       "angle": 0,
       "multitenantContextJsonIgnore": "false",
@@ -1611,7 +1827,7 @@
           "text": "id\nlogradouro\nnumero\ncomplemento\nbairro\ncep\ncidade\n"
         },
         ".uml-class-attrs-value": {
-          "ref-x": 102.234375,
+          "ref-x": 100.515625,
           "font-size": 11,
           "text": "java.lang.String\njava.lang.String\njava.lang.String\njava.lang.String\njava.lang.String\njava.lang.String\nCidade\n"
         },
@@ -1721,12 +1937,12 @@
         "+ list(): List<Produto>"
       ],
       "position": {
-        "x": 1159,
-        "y": 74
+        "x": 1234,
+        "y": 89
       },
       "size": {
-        "width": 163.171875,
-        "height": 141.3936004638672
+        "width": 164.34375,
+        "height": 141.9092254638672
       },
       "angle": 0,
       "multitenantContextJsonIgnore": "false",
@@ -1874,7 +2090,7 @@
           "text": "id\nnome\nvalor\nativo\n"
         },
         ".uml-class-attrs-value": {
-          "ref-x": 62.515625,
+          "ref-x": 63.328125,
           "font-size": 11,
           "text": "java.lang.Integer\njava.lang.String\njava.lang.String\njava.lang.String\n"
         },
@@ -1890,26 +2106,27 @@
       "name": "Cliente",
       "attributes": [
         "id:java.lang.String",
-        "nome:java.lang.String",
+        "razaoSocial:java.lang.String",
         "seguimento:java.lang.String",
-        "info:java.lang.String",
         "faturamento:java.lang.String",
         "cnpj:java.lang.String",
         "classificacao:java.lang.String",
         "parceiro:Parceiro",
         "endereco:Endereco",
-        "contato:Contato"
+        "contato:Contato",
+        "informacoesAdicionais:java.lang.String",
+        "dataAlteracao:java.sql.Timestamp"
       ],
       "methods": [
         "+ list(): List<Cliente>"
       ],
       "position": {
-        "x": 881,
-        "y": 376
+        "x": 927.000244140625,
+        "y": 399
       },
       "size": {
-        "width": 191.15625,
-        "height": 206.96070861816406
+        "width": 259.640625,
+        "height": 218.43304443359375
       },
       "angle": 0,
       "multitenantContextJsonIgnore": "false",
@@ -1958,14 +2175,14 @@
           "isSearchable": false
         },
         {
-          "name": "nome",
+          "name": "razaoSocial",
           "type": "java.lang.String",
-          "dbName": "nome",
+          "dbName": "razaoSocial",
           "dbLength": "",
           "dbPrecision": "",
           "dbScale": "",
           "dbDefaultValue": "",
-          "label": "Nome",
+          "label": "Razao Social",
           "mask": "",
           "isPrimaryKey": false,
           "isUniqueKey": false,
@@ -1989,29 +2206,6 @@
           "dbScale": "",
           "dbDefaultValue": "",
           "label": "Seguimento",
-          "mask": "",
-          "isPrimaryKey": false,
-          "isUniqueKey": false,
-          "isNullable": true,
-          "pkType": "",
-          "multitenantContext": "",
-          "jsonIgnore": false,
-          "isTransient": false,
-          "isInsertable": true,
-          "isUpdatable": true,
-          "isEncryption": false,
-          "referencedColumnName": "",
-          "isSearchable": false
-        },
-        {
-          "name": "info",
-          "type": "java.lang.String",
-          "dbName": "info",
-          "dbLength": "",
-          "dbPrecision": "",
-          "dbScale": "",
-          "dbDefaultValue": "",
-          "label": "Info",
           "mask": "",
           "isPrimaryKey": false,
           "isUniqueKey": false,
@@ -2099,15 +2293,19 @@
           "name": "parceiro",
           "type": "Parceiro",
           "dbName": "fk_parceiro",
-          "label": "",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "",
+          "label": "Parceiro",
           "mask": "",
           "isPrimaryKey": false,
           "isUniqueKey": false,
           "isNullable": true,
-          "multitenantContext": "",
           "pkType": "",
-          "isIgnore": false,
-          "isTransien": false,
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
           "isInsertable": true,
           "isUpdatable": true,
           "isEncryption": false,
@@ -2118,15 +2316,19 @@
           "name": "endereco",
           "type": "Endereco",
           "dbName": "fk_endereco",
-          "label": "",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "",
+          "label": "Endereco",
           "mask": "",
           "isPrimaryKey": false,
           "isUniqueKey": false,
           "isNullable": true,
-          "multitenantContext": "",
           "pkType": "",
-          "isIgnore": false,
-          "isTransien": false,
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
           "isInsertable": true,
           "isUpdatable": true,
           "isEncryption": false,
@@ -2137,15 +2339,65 @@
           "name": "contato",
           "type": "Contato",
           "dbName": "fk_contato",
-          "label": "",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "",
+          "label": "Contato",
           "mask": "",
           "isPrimaryKey": false,
           "isUniqueKey": false,
           "isNullable": true,
-          "multitenantContext": "",
           "pkType": "",
-          "isIgnore": false,
-          "isTransien": false,
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "referencedColumnName": "",
+          "isSearchable": false
+        },
+        {
+          "name": "informacoesAdicionais",
+          "type": "java.lang.String",
+          "dbName": "informacoesAdicionais",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "",
+          "label": "Informacoes Adicionais",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": true,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "referencedColumnName": "",
+          "isSearchable": false
+        },
+        {
+          "name": "dataAlteracao",
+          "type": "java.sql.Timestamp",
+          "dbName": "dataAlteracao",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "",
+          "label": "Data Alteracao",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": true,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
           "isInsertable": true,
           "isUpdatable": true,
           "isEncryption": false,
@@ -2165,12 +2417,12 @@
           "transform": "translate(0,0)"
         },
         ".uml-class-attrs-rect": {
-          "height": 230,
+          "height": 250,
           "transform": "translate(0,50)"
         },
         ".uml-class-methods-rect": {
           "height": 50,
-          "transform": "translate(0,280)"
+          "transform": "translate(0,300)"
         },
         ".uml-class-name-text": {
           "fill": "#000",
@@ -2180,12 +2432,12 @@
         },
         ".uml-class-attrs-text": {
           "font-size": 11,
-          "text": "id\nnome\nseguimento\ninfo\nfaturamento\ncnpj\nclassificacao\nparceiro\nendereco\ncontato\n"
+          "text": "id\nrazaoSocial\nseguimento\nfaturamento\ncnpj\nclassificacao\nparceiro\nendereco\ncontato\ninformacoesAdicionais\ndataAlteracao\n"
         },
         ".uml-class-attrs-value": {
-          "ref-x": 97.34375,
+          "ref-x": 146.484375,
           "font-size": 11,
-          "text": "java.lang.String\njava.lang.String\njava.lang.String\njava.lang.String\njava.lang.String\njava.lang.String\njava.lang.String\nParceiro\nEndereco\nContato\n"
+          "text": "java.lang.String\njava.lang.String\njava.lang.String\njava.lang.String\njava.lang.String\njava.lang.String\nParceiro\nEndereco\nContato\njava.lang.String\njava.sql.Timestamp\n"
         },
         ".uml-class-methods-text": {
           "fill": "#0066FF",
@@ -2329,26 +2581,26 @@
       "attributes": [
         "id:java.lang.String",
         "estagio:java.lang.String",
-        "data:java.lang.String",
+        "dataCadastro:java.lang.String",
         "valor:java.lang.String",
-        "observacao:java.lang.String",
-        "comentario:java.lang.String",
+        "observacoes:java.util.Set",
         "status:java.lang.String",
         "tipo:java.lang.String",
         "parceiro:Parceiro",
         "cliente:Cliente",
-        "produto:Produto"
+        "produto:Produto",
+        "dataAlteracao:java.sql.Timestamp"
       ],
       "methods": [
         "+ list(): List<Oportunidade>"
       ],
       "position": {
-        "x": 868,
-        "y": 55
+        "x": 925.0001220703125,
+        "y": 59
       },
       "size": {
-        "width": 185.671875,
-        "height": 217.91741943359375
+        "width": 216.84375,
+        "height": 218.43304443359375
       },
       "angle": 0,
       "multitenantContextJsonIgnore": "false",
@@ -2420,14 +2672,14 @@
           "isSearchable": false
         },
         {
-          "name": "data",
+          "name": "dataCadastro",
           "type": "java.lang.String",
-          "dbName": "data",
+          "dbName": "dataCadastro",
           "dbLength": "",
           "dbPrecision": "",
           "dbScale": "",
           "dbDefaultValue": "",
-          "label": "Data",
+          "label": "Data Cadastro",
           "mask": "",
           "isPrimaryKey": false,
           "isUniqueKey": false,
@@ -2466,37 +2718,14 @@
           "isSearchable": false
         },
         {
-          "name": "observacao",
-          "type": "java.lang.String",
-          "dbName": "observacao",
+          "name": "observacoes",
+          "type": "java.util.Set",
+          "dbName": "observacoes",
           "dbLength": "",
           "dbPrecision": "",
           "dbScale": "",
           "dbDefaultValue": "",
-          "label": "Observacao",
-          "mask": "",
-          "isPrimaryKey": false,
-          "isUniqueKey": false,
-          "isNullable": true,
-          "pkType": "",
-          "multitenantContext": "",
-          "jsonIgnore": false,
-          "isTransient": false,
-          "isInsertable": true,
-          "isUpdatable": true,
-          "isEncryption": false,
-          "referencedColumnName": "",
-          "isSearchable": false
-        },
-        {
-          "name": "comentario",
-          "type": "java.lang.String",
-          "dbName": "comentario",
-          "dbLength": "",
-          "dbPrecision": "",
-          "dbScale": "",
-          "dbDefaultValue": "",
-          "label": "Comentario",
+          "label": "Observacoes",
           "mask": "",
           "isPrimaryKey": false,
           "isUniqueKey": false,
@@ -2561,15 +2790,19 @@
           "name": "parceiro",
           "type": "Parceiro",
           "dbName": "fk_parceiro",
-          "label": "",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "",
+          "label": "Parceiro",
           "mask": "",
           "isPrimaryKey": false,
           "isUniqueKey": false,
           "isNullable": true,
-          "multitenantContext": "",
           "pkType": "",
-          "isIgnore": false,
-          "isTransien": false,
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
           "isInsertable": true,
           "isUpdatable": true,
           "isEncryption": false,
@@ -2580,15 +2813,19 @@
           "name": "cliente",
           "type": "Cliente",
           "dbName": "fk_cliente",
-          "label": "",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "",
+          "label": "Cliente",
           "mask": "",
           "isPrimaryKey": false,
           "isUniqueKey": false,
           "isNullable": true,
-          "multitenantContext": "",
           "pkType": "",
-          "isIgnore": false,
-          "isTransien": false,
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
           "isInsertable": true,
           "isUpdatable": true,
           "isEncryption": false,
@@ -2599,15 +2836,42 @@
           "name": "produto",
           "type": "Produto",
           "dbName": "fk_produto",
-          "label": "",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "",
+          "label": "Produto",
           "mask": "",
           "isPrimaryKey": false,
           "isUniqueKey": false,
           "isNullable": true,
-          "multitenantContext": "",
           "pkType": "",
-          "isIgnore": false,
-          "isTransien": false,
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "referencedColumnName": "",
+          "isSearchable": false
+        },
+        {
+          "name": "dataAlteracao",
+          "type": "java.sql.Timestamp",
+          "dbName": "dataAlteracao",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "",
+          "label": "Data Alteracao",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": true,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
           "isInsertable": true,
           "isUpdatable": true,
           "isEncryption": false,
@@ -2642,12 +2906,12 @@
         },
         ".uml-class-attrs-text": {
           "font-size": 11,
-          "text": "id\nestagio\ndata\nvalor\nobservacao\ncomentario\nstatus\ntipo\nparceiro\ncliente\nproduto\n"
+          "text": "id\nestagio\ndataCadastro\nvalor\nobservacoes\nstatus\ntipo\nparceiro\ncliente\nproduto\ndataAlteracao\n"
         },
         ".uml-class-attrs-value": {
-          "ref-x": 91.859375,
+          "ref-x": 103.6875,
           "font-size": 11,
-          "text": "java.lang.String\njava.lang.String\njava.lang.String\njava.lang.String\njava.lang.String\njava.lang.String\njava.lang.String\njava.lang.String\nParceiro\nCliente\nProduto\n"
+          "text": "java.lang.String\njava.lang.String\njava.lang.String\njava.lang.String\njava.util.Set\njava.lang.String\njava.lang.String\nParceiro\nCliente\nProduto\njava.sql.Timestamp\n"
         },
         ".uml-class-methods-text": {
           "fill": "#0066FF",
@@ -2792,7 +3056,7 @@
         "id:java.lang.String",
         "nome:java.lang.String",
         "telefones:java.util.Set",
-        "info:java.lang.String",
+        "informacoesAdicionais:java.lang.String",
         "email:java.lang.String",
         "cargo:java.lang.String",
         "tipo:java.lang.String",
@@ -2802,12 +3066,12 @@
         "+ list(): List<Contato>"
       ],
       "position": {
-        "x": 596,
-        "y": 357
+        "x": 943,
+        "y": 724
       },
       "size": {
-        "width": 173.953125,
-        "height": 185.06519317626953
+        "width": 240.0625,
+        "height": 185.77613067626953
       },
       "angle": 0,
       "multitenantContextJsonIgnore": "false",
@@ -2902,14 +3166,14 @@
           "isSearchable": false
         },
         {
-          "name": "info",
+          "name": "informacoesAdicionais",
           "type": "java.lang.String",
-          "dbName": "info",
+          "dbName": "informacoesAdicionais",
           "dbLength": "",
           "dbPrecision": "",
           "dbScale": "",
           "dbDefaultValue": "",
-          "label": "Info",
+          "label": "Informacoes Adicionais",
           "mask": "",
           "isPrimaryKey": false,
           "isUniqueKey": false,
@@ -3044,10 +3308,10 @@
         },
         ".uml-class-attrs-text": {
           "font-size": 11,
-          "text": "id\nnome\ntelefones\ninfo\nemail\ncargo\ntipo\nskype\n"
+          "text": "id\nnome\ntelefones\ninformacoesAdicionais\nemail\ncargo\ntipo\nskype\n"
         },
         ".uml-class-attrs-value": {
-          "ref-x": 80.140625,
+          "ref-x": 145.953125,
           "font-size": 11,
           "text": "java.lang.String\njava.lang.String\njava.util.Set\njava.lang.String\njava.lang.String\njava.lang.String\njava.lang.String\njava.lang.String\n"
         },
@@ -3055,49 +3319,6 @@
           "fill": "#0066FF",
           "font-size": 11,
           "text": "+ list(): List<Contato>"
-        }
-      }
-    },
-    {
-      "type": "uml.Composition",
-      "relationFields": [
-        "contato:target"
-      ],
-      "associationType": "Association",
-      "name": null,
-      "id": "da22290c-895b-43df-9ad2-88ef8deac738",
-      "runtimeClass": "cronos.widgets.joint.arrow.OneToMany",
-      "target": {
-        "id": "bd9150d9-52e7-432d-b545-bd147a7b8bb3"
-      },
-      "source": {
-        "id": "4cd0b65e-8a17-4204-8194-a3c6f2e80a28"
-      },
-      "labels": [
-        {
-          "position": 0.9,
-          "attrs": {
-            "rect": {
-              "fill": "transparent"
-            },
-            "text": {
-              "text": "*",
-              "font-family": "Arial",
-              "font-size": "12px",
-              "fill": "#cecece"
-            }
-          }
-        }
-      ],
-      "z": 38,
-      "attrs": {
-        ".marker-target": {
-          "d": "",
-          "fill": ""
-        },
-        ".marker-source": {
-          "d": "M 40 10 L 20 20 L 0 10 L 20 0 z",
-          "fill": "#cecece"
         }
       }
     },
@@ -3143,6 +3364,275 @@
           "fill": "#cecece"
         }
       }
+    },
+    {
+      "type": "uml.Class",
+      "name": "ScanDocumento",
+      "attributes": [
+        "id:java.lang.String",
+        "tipoDocumento:java.lang.String",
+        "dataEmissao:java.util.Date",
+        "imagem:Image Upload (to Dropbox)",
+        "dataAlteracao:java.sql.Timestamp",
+        "parceiro:Parceiro"
+      ],
+      "methods": [
+        "+ list(): List<ScanDocumento>"
+      ],
+      "position": {
+        "x": 577,
+        "y": 13
+      },
+      "size": {
+        "width": 262.15625,
+        "height": 163.71875
+      },
+      "angle": 0,
+      "multitenantContextJsonIgnore": "false",
+      "multitenantContextIgnoreEntities": "",
+      "role": "Auto",
+      "queries": [
+        {
+          "isRest": "true",
+          "name": "list",
+          "query": "select c from $entity c",
+          "void": false,
+          "type": "select"
+        }
+      ],
+      "tableName": null,
+      "realName": "",
+      "tableScheme": null,
+      "generateView": "Auto",
+      "isRest": "true",
+      "multitenantContext": "",
+      "restSecurity": null,
+      "restPath": "",
+      "id": "d5c1ab29-85cf-4799-8e1a-d8142d239674",
+      "fields": [
+        {
+          "name": "id",
+          "type": "java.lang.String",
+          "dbName": "id",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "UUID.randomUUID().toString().toUpperCase()",
+          "label": "Id",
+          "mask": "",
+          "isPrimaryKey": true,
+          "isUniqueKey": false,
+          "isNullable": false,
+          "pkType": "UUID",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "referencedColumnName": "",
+          "isSearchable": false
+        },
+        {
+          "name": "tipoDocumento",
+          "type": "java.lang.String",
+          "dbName": "tipoDocumento",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "",
+          "label": "Tipo Documento",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": true,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "referencedColumnName": "",
+          "isSearchable": false
+        },
+        {
+          "name": "dataEmissao",
+          "type": "java.util.Date",
+          "dbName": "dataEmissao",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "",
+          "label": "Data Emissao",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": true,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "referencedColumnName": "",
+          "isSearchable": false
+        },
+        {
+          "name": "imagem",
+          "type": "Image Upload (to Dropbox)",
+          "dbName": "imagem",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "",
+          "label": "Imagem",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": true,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "referencedColumnName": "",
+          "isSearchable": false
+        },
+        {
+          "name": "dataAlteracao",
+          "type": "java.sql.Timestamp",
+          "dbName": "dataAlteracao",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "",
+          "label": "Data Alteracao",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": true,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "referencedColumnName": "",
+          "isSearchable": false
+        },
+        {
+          "name": "parceiro",
+          "type": "Parceiro",
+          "dbName": "fk_parceiro",
+          "label": "",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": true,
+          "multitenantContext": "",
+          "pkType": "",
+          "isIgnore": false,
+          "isTransien": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "referencedColumnName": "",
+          "isSearchable": false
+        }
+      ],
+      "runtimeClass": "cronos.widgets.joint.uml.Class",
+      "z": 40,
+      "cloudStorage": {
+        "name": "Dropbox",
+        "accessToken": "ozsi494Wy9AAAAAAAAAACkacd0TjGP8ecAoRkmAeTrreV9I-F4Oh_cHNE5o7BcGZ",
+        "clearDatabaseRecord": false
+      },
+      "attrs": {
+        "rect": {
+          "stroke": "yellow",
+          "stroke-width": 2
+        },
+        ".uml-class-name-rect": {
+          "height": 50,
+          "transform": "translate(0,0)"
+        },
+        ".uml-class-attrs-rect": {
+          "height": 150,
+          "transform": "translate(0,50)"
+        },
+        ".uml-class-methods-rect": {
+          "height": 50,
+          "transform": "translate(0,200)"
+        },
+        ".uml-class-name-text": {
+          "fill": "#000",
+          "font-size": 12,
+          "text": "ScanDocumento",
+          "font-weight": "bold"
+        },
+        ".uml-class-attrs-text": {
+          "font-size": 11,
+          "text": "id\ntipoDocumento\ndataEmissao\nimagem\ndataAlteracao\nparceiro\n"
+        },
+        ".uml-class-attrs-value": {
+          "ref-x": 109.796875,
+          "font-size": 11,
+          "text": "java.lang.String\njava.lang.String\njava.util.Date\nImage Upload (to Dropbox)\njava.sql.Timestamp\nParceiro\n"
+        },
+        ".uml-class-methods-text": {
+          "fill": "#0066FF",
+          "font-size": 11,
+          "text": "+ list(): List<ScanDocumento>"
+        }
+      }
+    },
+    {
+      "type": "uml.Composition",
+      "relationFields": [
+        "parceiro:target"
+      ],
+      "associationType": "Association",
+      "name": null,
+      "id": "0ae765bb-e2f0-4bbc-95ca-7f056e898a4c",
+      "runtimeClass": "cronos.widgets.joint.arrow.OneToMany",
+      "target": {
+        "id": "d5c1ab29-85cf-4799-8e1a-d8142d239674"
+      },
+      "source": {
+        "id": "bd9150d9-52e7-432d-b545-bd147a7b8bb3"
+      },
+      "labels": [
+        {
+          "position": 0.9,
+          "attrs": {
+            "rect": {
+              "fill": "transparent"
+            },
+            "text": {
+              "text": "*",
+              "font-family": "Arial",
+              "font-size": "12px",
+              "fill": "#cecece"
+            }
+          }
+        }
+      ],
+      "z": 41,
+      "attrs": {
+        ".marker-target": {
+          "d": "",
+          "fill": ""
+        },
+        ".marker-source": {
+          "d": "M 40 10 L 20 20 L 0 10 L 20 0 z",
+          "fill": "#cecece"
+        }
+      }
     }
   ],
   "selectedGroup": "1d7f906f-a526-482d-aaf4-08d227ae8c18",
@@ -3169,6 +3659,7 @@
         "52c2a9e8-4d95-402b-af04-2bd4a5ce8a53",
         "52db97a3-f087-40aa-aa97-8a34cf8d9efd",
         "1df87f56-c5ba-47f5-8e68-82931f49b989",
+        "d5c1ab29-85cf-4799-8e1a-d8142d239674",
         "ead256f4-81cb-4260-9140-7abffa36ca28",
         "bf5e9ede-1b50-44fb-a0b5-cd8304b04a60"
       ]
