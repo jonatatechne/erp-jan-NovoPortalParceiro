@@ -90,4 +90,11 @@ public interface UserDAO extends JpaRepository<User, java.lang.String> {
   @Query("DELETE FROM UserRole entity WHERE entity.user.id = :instanceId AND entity.role.id = :relationId")
   public int deleteRole(@Param(value="instanceId") java.lang.String instanceId, @Param(value="relationId") java.lang.String relationId);
 
+  /**
+   * Foreign Key parceiro
+   * @generated
+   */
+  @Query("SELECT entity FROM User entity WHERE entity.parceiro.id = :id")
+  public Page<User> findUsersByParceiro(@Param(value="id") java.lang.String id, Pageable pageable);
+
 }

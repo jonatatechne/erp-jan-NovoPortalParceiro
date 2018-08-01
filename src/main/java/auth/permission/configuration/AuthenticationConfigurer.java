@@ -4,9 +4,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,9 +33,6 @@ public class AuthenticationConfigurer implements AuthenticationProvider {
 	private final PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
 	@Autowired
-	private HttpServletRequest request;
-
-	@Autowired
 	private UserDAO userRepository;
 
 	@Autowired
@@ -61,9 +55,7 @@ public class AuthenticationConfigurer implements AuthenticationProvider {
 			UsernamePasswordAuthenticationToken userToken = new UsernamePasswordAuthenticationToken(userDetails,
 					user.getPassword(), roles);
 			userToken.setDetails(userDetails);
-
-			HttpSession session = request.getSession();
-			session.setAttribute("theme", (user.getTheme() != null) ? user.getTheme() : "");
+			
 			return userToken;
 		} else {
 			throw new BadCredentialsException("Usuário ou senha incorreta!");

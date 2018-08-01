@@ -4,15 +4,13 @@ import java.io.*;
 import javax.persistence.*;
 import java.util.*;
 import javax.xml.bind.annotation.*;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * Classe que representa a tabela USER
  * @generated
  */
 @Entity
-@Table(name = "\"USER\"" ,uniqueConstraints=@UniqueConstraint(columnNames={
-"login" }))
+@Table(name = "\"USER\"")
 @XmlRootElement
 public class User implements Serializable {
 
@@ -23,95 +21,47 @@ public class User implements Serializable {
   private static final long serialVersionUID = 1L;
   
   /**
-  * @generated
-  */
-  @Column(name = "email", nullable = true, unique = false, insertable=true, updatable=true)
-  private java.lang.String email;
-  
-  /**
-  * @generated
-  */
-  @Column(name = "name", nullable = false, unique = false, insertable=true, updatable=true)
-  private java.lang.String name;
-  
-  /**
    * @generated
    */
   @Id
+  @Column(name = "id", nullable = false, insertable=true, updatable=true)
   private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
   
   /**
   * @generated
   */
-  @Column(name = "login", nullable = false, unique = true, insertable=true, updatable=true)
+  @Column(name = "login", nullable = true, unique = false, insertable=true, updatable=true)
   private java.lang.String login;
   
   /**
   * @generated
   */
-  @Column(name = "picture", nullable = true, unique = false, insertable=true, updatable=true)
-  private java.lang.String picture;
-  
-  /**
-  * @generated
-  */
-  @Column(name = "password", nullable = false, unique = false, insertable=true, updatable=true)
+  @Column(name = "password", nullable = true, unique = false, insertable=true, updatable=true)
   private java.lang.String password;
   
   /**
   * @generated
   */
-  @Column(name = "theme", nullable = true, unique = false, insertable=true, updatable=true)
-  private java.lang.String theme;
+  @Column(name = "ativo", nullable = true, unique = false, insertable=true, updatable=true)
+  private java.lang.Boolean ativo;
   
-    /**
+  /**
+  * @generated
+  */
+  @ManyToOne
+  @JoinColumn(name="fk_parceiro", nullable = true, referencedColumnName = "id", insertable=true, updatable=true)
+  private Parceiro parceiro;
+  
+  /**
    * Construtor
    * @generated
    */
   public User(){
   }
 
-  /**
-   * Obtém email
-   * 
-   * return email
-   * @generated
-   */
-  public java.lang.String getEmail(){
-    return this.email;
-  }
   
-  /**
-   * Define email
-   * @param email email
-   * @generated
-   */
-  public User setEmail(java.lang.String email){
-    this.email = email;
-    return this;
-  }
-  /**
-   * Obtém name
-   * 
-   * return name
-   * @generated
-   */
-  public java.lang.String getName(){
-    return this.name;
-  }
-  
-  /**
-   * Define name
-   * @param name name
-   * @generated
-   */
-  public User setName(java.lang.String name){
-    this.name = name;
-    return this;
-  }
   /**
    * Obtém id
-   * 
    * return id
    * @generated
    */
@@ -128,9 +78,9 @@ public class User implements Serializable {
     this.id = id;
     return this;
   }
+  
   /**
    * Obtém login
-   * 
    * return login
    * @generated
    */
@@ -147,28 +97,9 @@ public class User implements Serializable {
     this.login = login;
     return this;
   }
-  /**
-   * Obtém picture
-   * 
-   * return picture
-   * @generated
-   */
-  public java.lang.String getPicture(){
-    return this.picture;
-  }
   
   /**
-   * Define picture
-   * @param picture picture
-   * @generated
-   */
-  public User setPicture(java.lang.String picture){
-    this.picture = picture;
-    return this;
-  }
-  /**
    * Obtém password
-   * 
    * return password
    * @generated
    */
@@ -185,23 +116,42 @@ public class User implements Serializable {
     this.password = password;
     return this;
   }
+  
   /**
-   * Obtém theme
-   * 
-   * return theme
+   * Obtém ativo
+   * return ativo
    * @generated
    */
-  public java.lang.String getTheme(){
-    return this.theme;
+  public java.lang.Boolean getAtivo(){
+    return this.ativo;
   }
   
   /**
-   * Define theme
-   * @param theme theme
+   * Define ativo
+   * @param ativo ativo
    * @generated
    */
-  public User setTheme(java.lang.String theme){
-    this.theme = theme;
+  public User setAtivo(java.lang.Boolean ativo){
+    this.ativo = ativo;
+    return this;
+  }
+  
+  /**
+   * Obtém parceiro
+   * return parceiro
+   * @generated
+   */
+  public Parceiro getParceiro(){
+    return this.parceiro;
+  }
+  
+  /**
+   * Define parceiro
+   * @param parceiro parceiro
+   * @generated
+   */
+  public User setParceiro(Parceiro parceiro){
+    this.parceiro = parceiro;
     return this;
   }
   

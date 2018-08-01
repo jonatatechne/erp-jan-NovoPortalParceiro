@@ -64,14 +64,6 @@ public interface UserRoleDAO extends JpaRepository<UserRole, java.lang.String> {
    * 
    * @generated
    */
-  @Query("select u from UserRole u where u.user.email = :email")
-  public Page<UserRole> findByEmail(@Param(value="email") java.lang.String email, Pageable pageable);
-  
-  /**
-   * Lista com paginação de acordo com a NamedQuery
-   * 
-   * @generated
-   */
   @Query("select u from UserRole u where u.user.login = :login")
   public Page<UserRole> findByLogin(@Param(value="login") java.lang.String login, Pageable pageable);
   
@@ -86,14 +78,14 @@ public interface UserRoleDAO extends JpaRepository<UserRole, java.lang.String> {
 
 
   /**
-   * Foreign Key User
+   * Foreign Key user
    * @generated
    */
   @Query("SELECT entity FROM UserRole entity WHERE entity.user.id = :id")
   public Page<UserRole> findUserRolesByUser(@Param(value="id") java.lang.String id, Pageable pageable);
 
   /**
-   * Foreign Key Role
+   * Foreign Key role
    * @generated
    */
   @Query("SELECT entity FROM UserRole entity WHERE entity.role.id = :id")
