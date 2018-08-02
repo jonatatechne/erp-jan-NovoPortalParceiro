@@ -191,4 +191,29 @@ public class ParceiroBusiness {
     // end-user-code  
     return result;  
   }
+  /**
+   * @generated modifiable
+   * ManyToMany Relation
+   */  
+  public Page<TipoDocumento> listTipoDocumento(java.lang.String id, Pageable pageable) {
+    // begin-user-code
+    // end-user-code  
+    Page<TipoDocumento> result = repository.listTipoDocumento(id, pageable);
+    // begin-user-code
+    // end-user-code
+    return result;            
+  }
+  
+  /**
+   * @generated modifiable
+   * ManyToMany Relation
+   */    
+  public int deleteTipoDocumento(java.lang.String instanceId, java.lang.String relationId) {
+    // begin-user-code
+    // end-user-code  
+    int result = repository.deleteTipoDocumento(instanceId, relationId);
+    // begin-user-code
+    // end-user-code  
+    return result;  
+  }
 }

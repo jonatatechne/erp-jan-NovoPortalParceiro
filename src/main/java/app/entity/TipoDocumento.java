@@ -6,13 +6,13 @@ import java.util.*;
 import javax.xml.bind.annotation.*;
 
 /**
- * Classe que representa a tabela CIDADE
+ * Classe que representa a tabela TIPODOCUMENTO
  * @generated
  */
 @Entity
-@Table(name = "\"CIDADE\"")
+@Table(name = "\"TIPODOCUMENTO\"")
 @XmlRootElement
-public class Cidade implements Serializable {
+public class TipoDocumento implements Serializable {
 
   /**
    * UID da classe, necessário na serialização 
@@ -24,28 +24,26 @@ public class Cidade implements Serializable {
    * @generated
    */
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id", nullable = false, insertable=true, updatable=true)
-  private java.lang.Integer id;
+  private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
   
   /**
   * @generated
   */
-  @Column(name = "nome", nullable = true, unique = false, insertable=true, updatable=true)
-  private java.lang.String nome;
+  @Column(name = "nomeDoc", nullable = true, unique = false, insertable=true, updatable=true)
+  private java.lang.String nomeDoc;
   
   /**
   * @generated
   */
-  @ManyToOne
-  @JoinColumn(name="fk_estado", nullable = true, referencedColumnName = "id", insertable=true, updatable=true)
-  private Estado estado;
+  @Column(name = "validade", nullable = true, unique = false, insertable=true, updatable=true)
+  private java.lang.Integer validade;
   
   /**
    * Construtor
    * @generated
    */
-  public Cidade(){
+  public TipoDocumento(){
   }
 
   
@@ -54,7 +52,7 @@ public class Cidade implements Serializable {
    * return id
    * @generated
    */
-  public java.lang.Integer getId(){
+  public java.lang.String getId(){
     return this.id;
   }
   
@@ -63,46 +61,46 @@ public class Cidade implements Serializable {
    * @param id id
    * @generated
    */
-  public Cidade setId(java.lang.Integer id){
+  public TipoDocumento setId(java.lang.String id){
     this.id = id;
     return this;
   }
   
   /**
-   * Obtém nome
-   * return nome
+   * Obtém nomeDoc
+   * return nomeDoc
    * @generated
    */
-  public java.lang.String getNome(){
-    return this.nome;
+  public java.lang.String getNomeDoc(){
+    return this.nomeDoc;
   }
   
   /**
-   * Define nome
-   * @param nome nome
+   * Define nomeDoc
+   * @param nomeDoc nomeDoc
    * @generated
    */
-  public Cidade setNome(java.lang.String nome){
-    this.nome = nome;
+  public TipoDocumento setNomeDoc(java.lang.String nomeDoc){
+    this.nomeDoc = nomeDoc;
     return this;
   }
   
   /**
-   * Obtém estado
-   * return estado
+   * Obtém validade
+   * return validade
    * @generated
    */
-  public Estado getEstado(){
-    return this.estado;
+  public java.lang.Integer getValidade(){
+    return this.validade;
   }
   
   /**
-   * Define estado
-   * @param estado estado
+   * Define validade
+   * @param validade validade
    * @generated
    */
-  public Cidade setEstado(Estado estado){
-    this.estado = estado;
+  public TipoDocumento setValidade(java.lang.Integer validade){
+    this.validade = validade;
     return this;
   }
   
@@ -113,7 +111,7 @@ public class Cidade implements Serializable {
   public boolean equals(Object obj) {
     if (this == obj) return true;
     if (obj == null || getClass() != obj.getClass()) return false;
-    Cidade object = (Cidade)obj;
+    TipoDocumento object = (TipoDocumento)obj;
     if (id != null ? !id.equals(object.id) : object.id != null) return false;
     return true;
   }

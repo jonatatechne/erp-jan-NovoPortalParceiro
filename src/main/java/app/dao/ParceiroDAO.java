@@ -101,5 +101,19 @@ public interface ParceiroDAO extends JpaRepository<Parceiro, java.lang.String> {
   @Modifying
   @Query("DELETE FROM Contato entity WHERE entity.parceiro.id = :instanceId AND entity.cliente.id = :relationId")
   public int deleteCliente_2(@Param(value="instanceId") java.lang.String instanceId, @Param(value="relationId") java.lang.String relationId);
+  /**
+   * ManyToOne Relation
+   * @generated
+   */
+  @Query("SELECT entity.tipoDocumento FROM ScanDocumento entity WHERE entity.parceiro.id = :id")
+  public Page<TipoDocumento> listTipoDocumento(@Param(value="id") java.lang.String id, Pageable pageable);
+
+  /**
+   * ManyToOne Relation Delete
+   * @generated
+   */
+  @Modifying
+  @Query("DELETE FROM ScanDocumento entity WHERE entity.parceiro.id = :instanceId AND entity.tipoDocumento.id = :relationId")
+  public int deleteTipoDocumento(@Param(value="instanceId") java.lang.String instanceId, @Param(value="relationId") java.lang.String relationId);
 
 }

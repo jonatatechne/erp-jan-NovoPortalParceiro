@@ -11,6 +11,7 @@
         <class>app.entity.Cidade</class>
         <class>app.entity.Endereco</class>
         <class>app.entity.Produto</class>
+        <class>app.entity.TipoDocumento</class>
         <class>app.entity.Cliente</class>
         <class>app.entity.Oportunidade</class>
         <class>app.entity.Role</class>

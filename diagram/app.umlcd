@@ -1812,8 +1812,8 @@
         "+ list(): List<Produto>"
       ],
       "position": {
-        "x": 985,
-        "y": 66
+        "x": 1044,
+        "y": 64
       },
       "size": {
         "width": 163.171875,
@@ -3202,22 +3202,22 @@
       "name": "ScanDocumento",
       "attributes": [
         "id:java.lang.String",
-        "tipoDocumento:java.lang.String",
         "dataEmissao:java.util.Date",
         "imagem:Image Upload (to Dropbox)",
         "dataAlteracao:java.sql.Timestamp",
-        "parceiro:Parceiro"
+        "parceiro:Parceiro",
+        "tipoDocumento:TipoDocumento"
       ],
       "methods": [
         "+ list(): List<ScanDocumento>"
       ],
       "position": {
-        "x": 577,
-        "y": 13
+        "x": 461,
+        "y": 32
       },
       "size": {
-        "width": 262.15625,
-        "height": 163.71875
+        "width": 259.984375,
+        "height": 163.203125
       },
       "angle": 0,
       "multitenantContextJsonIgnore": "false",
@@ -3256,29 +3256,6 @@
           "isUniqueKey": false,
           "isNullable": false,
           "pkType": "UUID",
-          "multitenantContext": "",
-          "jsonIgnore": false,
-          "isTransient": false,
-          "isInsertable": true,
-          "isUpdatable": true,
-          "isEncryption": false,
-          "referencedColumnName": "",
-          "isSearchable": false
-        },
-        {
-          "name": "tipoDocumento",
-          "type": "java.lang.String",
-          "dbName": "tipoDocumento",
-          "dbLength": "",
-          "dbPrecision": "",
-          "dbScale": "",
-          "dbDefaultValue": "",
-          "label": "Tipo Documento",
-          "mask": "",
-          "isPrimaryKey": false,
-          "isUniqueKey": false,
-          "isNullable": true,
-          "pkType": "",
           "multitenantContext": "",
           "jsonIgnore": false,
           "isTransient": false,
@@ -3361,6 +3338,29 @@
           "name": "parceiro",
           "type": "Parceiro",
           "dbName": "fk_parceiro",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "",
+          "label": "",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": true,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "referencedColumnName": "",
+          "isSearchable": false
+        },
+        {
+          "name": "tipoDocumento",
+          "type": "TipoDocumento",
+          "dbName": "fk_tipoDocumento",
           "label": "",
           "mask": "",
           "isPrimaryKey": false,
@@ -3409,12 +3409,12 @@
         },
         ".uml-class-attrs-text": {
           "font-size": 11,
-          "text": "id\ntipoDocumento\ndataEmissao\nimagem\ndataAlteracao\nparceiro\n"
+          "text": "id\ndataEmissao\nimagem\ndataAlteracao\nparceiro\ntipoDocumento\n"
         },
         ".uml-class-attrs-value": {
-          "ref-x": 109.796875,
+          "ref-x": 108.984375,
           "font-size": 11,
-          "text": "java.lang.String\njava.lang.String\njava.util.Date\nImage Upload (to Dropbox)\njava.sql.Timestamp\nParceiro\n"
+          "text": "java.lang.String\njava.util.Date\nImage Upload (to Dropbox)\njava.sql.Timestamp\nParceiro\nTipoDocumento\n"
         },
         ".uml-class-methods-text": {
           "fill": "#0066FF",
@@ -3810,6 +3810,202 @@
           "fill": "#cecece"
         }
       }
+    },
+    {
+      "type": "uml.Class",
+      "name": "TipoDocumento",
+      "attributes": [
+        "id:java.lang.String",
+        "nomeDoc:java.lang.String",
+        "validade:java.lang.Integer"
+      ],
+      "methods": [
+        "+ list(): List<TipoDocumento>"
+      ],
+      "position": {
+        "x": 804,
+        "y": 49
+      },
+      "size": {
+        "width": 195.140625,
+        "height": 130.51891326904297
+      },
+      "angle": 0,
+      "multitenantContextJsonIgnore": "false",
+      "multitenantContextIgnoreEntities": "",
+      "role": "Auto",
+      "queries": [
+        {
+          "isRest": "true",
+          "name": "list",
+          "query": "select c from $entity c",
+          "void": false,
+          "type": "select"
+        }
+      ],
+      "tableName": null,
+      "realName": "",
+      "tableScheme": null,
+      "generateView": "Auto",
+      "isRest": "true",
+      "multitenantContext": "",
+      "restSecurity": null,
+      "restPath": "",
+      "id": "fb450e87-fe17-4dc0-b124-f1bc3133ab04",
+      "fields": [
+        {
+          "name": "id",
+          "type": "java.lang.String",
+          "dbName": "id",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "UUID.randomUUID().toString().toUpperCase()",
+          "label": "Id",
+          "mask": "",
+          "isPrimaryKey": true,
+          "isUniqueKey": false,
+          "isNullable": false,
+          "pkType": "UUID",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "referencedColumnName": "",
+          "isSearchable": false
+        },
+        {
+          "name": "nomeDoc",
+          "type": "java.lang.String",
+          "dbName": "nomeDoc",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "",
+          "label": "Nome Doc",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": true,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "referencedColumnName": "",
+          "isSearchable": false
+        },
+        {
+          "name": "validade",
+          "type": "java.lang.Integer",
+          "dbName": "validade",
+          "dbLength": "",
+          "dbPrecision": "",
+          "dbScale": "",
+          "dbDefaultValue": "",
+          "label": "Validade",
+          "mask": "",
+          "isPrimaryKey": false,
+          "isUniqueKey": false,
+          "isNullable": true,
+          "pkType": "",
+          "multitenantContext": "",
+          "jsonIgnore": false,
+          "isTransient": false,
+          "isInsertable": true,
+          "isUpdatable": true,
+          "isEncryption": false,
+          "referencedColumnName": "",
+          "isSearchable": false
+        }
+      ],
+      "runtimeClass": "cronos.widgets.joint.uml.Class",
+      "z": 47,
+      "attrs": {
+        "rect": {
+          "stroke": "yellow",
+          "stroke-width": 2
+        },
+        ".uml-class-name-rect": {
+          "height": 50,
+          "transform": "translate(0,0)"
+        },
+        ".uml-class-attrs-rect": {
+          "height": 90,
+          "transform": "translate(0,50)"
+        },
+        ".uml-class-methods-rect": {
+          "height": 50,
+          "transform": "translate(0,140)"
+        },
+        ".uml-class-name-text": {
+          "fill": "#000",
+          "font-size": 12,
+          "text": "TipoDocumento",
+          "font-weight": "bold"
+        },
+        ".uml-class-attrs-text": {
+          "font-size": 11,
+          "text": "id\nnomeDoc\nvalidade\n"
+        },
+        ".uml-class-attrs-value": {
+          "ref-x": 94.484375,
+          "font-size": 11,
+          "text": "java.lang.String\njava.lang.String\njava.lang.Integer\n"
+        },
+        ".uml-class-methods-text": {
+          "fill": "#0066FF",
+          "font-size": 11,
+          "text": "+ list(): List<TipoDocumento>"
+        }
+      }
+    },
+    {
+      "type": "uml.Composition",
+      "relationFields": [
+        "tipoDocumento:source"
+      ],
+      "associationType": "Association",
+      "name": null,
+      "id": "520a4a1a-0edc-4ffa-af27-0fcf70adc4e6",
+      "runtimeClass": "cronos.widgets.joint.arrow.OneToOne",
+      "target": {
+        "id": "fb450e87-fe17-4dc0-b124-f1bc3133ab04"
+      },
+      "source": {
+        "id": "d5c1ab29-85cf-4799-8e1a-d8142d239674"
+      },
+      "labels": [
+        {
+          "position": 0.9,
+          "attrs": {
+            "rect": {
+              "fill": "transparent"
+            },
+            "text": {
+              "text": "1",
+              "font-family": "Arial",
+              "font-size": "12px",
+              "fill": "#cecece"
+            }
+          }
+        }
+      ],
+      "z": 48,
+      "attrs": {
+        ".marker-target": {
+          "d": "",
+          "fill": ""
+        },
+        ".marker-source": {
+          "d": "M 40 10 L 20 20 L 0 10 L 20 0 z",
+          "fill": "#cecece"
+        }
+      }
     }
   ],
   "selectedGroup": "1d7f906f-a526-482d-aaf4-08d227ae8c18",
@@ -3828,6 +4024,7 @@
       "id": "1d7f906f-a526-482d-aaf4-08d227ae8c18",
       "cells": [
         "4cd0b65e-8a17-4204-8194-a3c6f2e80a28",
+        "fb450e87-fe17-4dc0-b124-f1bc3133ab04",
         "bd9150d9-52e7-432d-b545-bd147a7b8bb3",
         "d2e50f97-0b9e-4037-94ba-af64568af247",
         "85abd153-89d4-4afd-9ad7-a8063cad79a5",

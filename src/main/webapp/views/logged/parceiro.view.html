@@ -971,11 +971,6 @@
                                     <tr class="table-header">
                                                 <th class="">
                                                     <div class="">
-                                                        Tipo Documento
-                                                    </div>
-                                                </th>
-                                                <th class="">
-                                                    <div class="">
                                                         Data Emissao
                                                     </div>
                                                 </th>
@@ -989,6 +984,11 @@
                                                         Data Alteracao
                                                     </div>
                                                 </th>
+                                                <th class="">
+                                                    <div class="">
+                                                        Tipodocumento
+                                                    </div>
+                                                </th>
                                         <th class="">
                                             <div class="">
                                                 {{"template.crud.actions" | translate}}
@@ -998,11 +998,6 @@
                                     </thead>
                                     <tbody>
                                     <tr class="table-content" ng-repeat="rowData in datasource.data">
-                                                <td>
-                                                    <div>
-                                                            {{rowData.tipoDocumento }}
-                                                    </div>
-                                                </td>
                                                 <td>
                                                     <div>
                                                             {{rowData.dataEmissao | date:'dd/MM/yyyy'}}
@@ -1018,6 +1013,11 @@
                                                 <td>
                                                     <div>
                                                             {{rowData.dataAlteracao | date:'dd/MM/yyyy HH:mm:ss'}}
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                            {{rowData.tipoDocumento.nomeDoc }}
                                                     </div>
                                                 </td>
                                         <td>
@@ -1436,16 +1436,6 @@
                                  <!-- end if !model.hasCronappFramework() -->
 
 
-                                    <div data-component="crn-textinput"  id="crn-textinput-tipoDocumento" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                        <div class="form-group">
-                                            <label for="textinput-tipoDocumento">Tipo Documento</label>
-                                                <input type="text"
-                                                       ng-model="ScanDocumentoGrid.active.tipoDocumento" class="form-control" id="textinput-tipoDocumento" placeholder="Tipo Documento"  >
-                                        </div>
-                                    </div>
-                                 <!-- end if !model.hasCronappFramework() -->
-
-
                                     <div data-component="crn-textinput"  id="crn-textinput-dataEmissao" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                         <div class="form-group">
                                             <label for="textinput-dataEmissao">Data Emissao</label>
@@ -1492,6 +1482,16 @@
                                     </div>
                                  <!-- end if !model.hasCronappFramework() -->
 
+                                 <!-- end if !model.hasCronappFramework() -->
+
+
+                                    <div data-component="crn-textinput"  id="crn-textinput-fk_tipoDocumento" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="form-group">
+                                            <label for="textinput-fk_tipoDocumento">Tipodocumento</label>
+                                                <input type="text"
+                                                       ng-model="ScanDocumentoGrid.active.tipoDocumento" class="form-control" id="textinput-fk_tipoDocumento" placeholder="Tipodocumento"  >
+                                        </div>
+                                    </div>
                                  <!-- end if !model.hasCronappFramework() -->
 
                     </div>

@@ -40,6 +40,13 @@ public class ParceiroREST {
    * @generated
    */
   @Autowired
+  @Qualifier("TipoDocumentoBusiness")
+  private TipoDocumentoBusiness tipoDocumentoBusiness;
+
+  /**
+   * @generated
+   */
+  @Autowired
   @Qualifier("UserBusiness")
   private UserBusiness userBusiness;
 
@@ -337,6 +344,42 @@ public class ParceiroREST {
   @RequestMapping(method = RequestMethod.DELETE,value="/{parceiroId}/Cliente_2/{Cliente_2Id}")
   public void deleteCliente_2(@PathVariable("parceiroId") java.lang.String parceiroId, @PathVariable("Cliente_2Id") java.lang.String Cliente_2Id) {
     this.parceiroBusiness.deleteCliente_2(parceiroId, Cliente_2Id);
+  }  
+
+  /**
+   * ManyToMany Relationship GET
+   * @generated
+   */
+  @RequestMapping(method = RequestMethod.GET,value="/{parceiroId}/TipoDocumento")
+  public HttpEntity<PagedResources<TipoDocumento>> listTipoDocumento(@PathVariable("parceiroId") java.lang.String parceiroId, Pageable pageable, PagedResourcesAssembler assembler) {
+    return new ResponseEntity<>(assembler.toResource(parceiroBusiness.listTipoDocumento(parceiroId, pageable)), HttpStatus.OK); 
+  }
+
+  /**
+   * ManyToMany Relationship POST
+   * @generated
+   */  
+  @RequestMapping(method = RequestMethod.POST,value="/{parceiroId}/TipoDocumento")
+  public Parceiro postTipoDocumento(@Validated @RequestBody final TipoDocumento entity, @PathVariable("parceiroId") java.lang.String parceiroId) throws Exception {
+    ScanDocumento newScanDocumento = new ScanDocumento();
+
+    Parceiro parceiro = this.parceiroBusiness.get(parceiroId);
+
+    newScanDocumento.setTipoDocumento(entity);
+    newScanDocumento.setParceiro(parceiro);
+    
+    this.scanDocumentoBusiness.post(newScanDocumento);
+
+    return newScanDocumento.getParceiro();
+  }   
+
+  /**
+   * ManyToMany Relationship DELETE
+   * @generated
+   */  
+  @RequestMapping(method = RequestMethod.DELETE,value="/{parceiroId}/TipoDocumento/{TipoDocumentoId}")
+  public void deleteTipoDocumento(@PathVariable("parceiroId") java.lang.String parceiroId, @PathVariable("TipoDocumentoId") java.lang.String TipoDocumentoId) {
+    this.parceiroBusiness.deleteTipoDocumento(parceiroId, TipoDocumentoId);
   }  
 
   /**

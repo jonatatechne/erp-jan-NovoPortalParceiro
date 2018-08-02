@@ -1,17 +1,9 @@
 package app.entity;
 
-import java.io.Serializable;
-import java.util.UUID;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.xml.bind.annotation.XmlRootElement;
+import java.io.*;
+import javax.persistence.*;
+import java.util.*;
+import javax.xml.bind.annotation.*;
 
 /**
  * Classe que representa a tabela SCANDOCUMENTO
@@ -34,12 +26,6 @@ public class ScanDocumento implements Serializable {
   @Id
   @Column(name = "id", nullable = false, insertable=true, updatable=true)
   private java.lang.String id = UUID.randomUUID().toString().toUpperCase();
-  
-  /**
-  * @generated
-  */
-  @Column(name = "tipoDocumento", nullable = true, unique = false, insertable=true, updatable=true)
-  private java.lang.String tipoDocumento;
   
   /**
   * @generated
@@ -69,6 +55,13 @@ public class ScanDocumento implements Serializable {
   private Parceiro parceiro;
   
   /**
+  * @generated
+  */
+  @OneToOne
+  @JoinColumn(name="fk_tipoDocumento", nullable = true, referencedColumnName = "id", insertable=true, updatable=true)
+  private TipoDocumento tipoDocumento;
+  
+  /**
    * Construtor
    * @generated
    */
@@ -92,25 +85,6 @@ public class ScanDocumento implements Serializable {
    */
   public ScanDocumento setId(java.lang.String id){
     this.id = id;
-    return this;
-  }
-  
-  /**
-   * Obtém tipoDocumento
-   * return tipoDocumento
-   * @generated
-   */
-  public java.lang.String getTipoDocumento(){
-    return this.tipoDocumento;
-  }
-  
-  /**
-   * Define tipoDocumento
-   * @param tipoDocumento tipoDocumento
-   * @generated
-   */
-  public ScanDocumento setTipoDocumento(java.lang.String tipoDocumento){
-    this.tipoDocumento = tipoDocumento;
     return this;
   }
   
@@ -187,6 +161,25 @@ public class ScanDocumento implements Serializable {
    */
   public ScanDocumento setParceiro(Parceiro parceiro){
     this.parceiro = parceiro;
+    return this;
+  }
+  
+  /**
+   * Obtém tipoDocumento
+   * return tipoDocumento
+   * @generated
+   */
+  public TipoDocumento getTipoDocumento(){
+    return this.tipoDocumento;
+  }
+  
+  /**
+   * Define tipoDocumento
+   * @param tipoDocumento tipoDocumento
+   * @generated
+   */
+  public ScanDocumento setTipoDocumento(TipoDocumento tipoDocumento){
+    this.tipoDocumento = tipoDocumento;
     return this;
   }
   
