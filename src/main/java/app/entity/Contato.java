@@ -1,9 +1,19 @@
 package app.entity;
 
-import java.io.*;
-import javax.persistence.*;
-import java.util.*;
-import javax.xml.bind.annotation.*;
+import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.UUID;
+
+import javax.persistence.CollectionTable;
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Classe que representa a tabela CONTATO
@@ -36,6 +46,8 @@ public class Contato implements Serializable {
   /**
   * @generated
   */
+  @ElementCollection
+  @CollectionTable(name = "TELEFONES_CONTATOS")
   @Column(name = "telefones", nullable = true, unique = false, insertable=true, updatable=true)
   private Set<String> telefones = new HashSet<>();
   

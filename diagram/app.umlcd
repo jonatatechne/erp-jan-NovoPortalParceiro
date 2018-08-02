@@ -20,7 +20,6 @@
       "restPath": "/api/rest",
       "visionLikePackage": false,
       "chkApi": false,
-      "generationType": "drop-and-create-tables",
       "attrs": {}
     },
     {
@@ -1155,8 +1154,8 @@
         "+ list(): List<Estado>"
       ],
       "position": {
-        "x": 52,
-        "y": 1130
+        "x": 47,
+        "y": 1105
       },
       "size": {
         "width": 162.171875,
@@ -1285,8 +1284,8 @@
         "+ list(): List<Cidade>"
       ],
       "position": {
-        "x": 44,
-        "y": 890
+        "x": 46,
+        "y": 892
       },
       "size": {
         "width": 167.671875,

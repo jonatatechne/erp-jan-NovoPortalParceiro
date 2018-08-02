@@ -1,9 +1,18 @@
 package app.entity;
 
-import java.io.*;
-import javax.persistence.*;
-import java.util.*;
-import javax.xml.bind.annotation.*;
+import java.io.Serializable;
+import java.util.UUID;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Classe que representa a tabela CLIENTE

@@ -1,0 +1,1507 @@
+<h3></h3>
+
+<!-- div row para pesquisa -->
+<!--<div class="row">-->
+
+
+<div data-component="crn-button" id="crn-button-564202" class="">
+    <button class="btn btn-primary" type="submit" onclick="" data-component="crn-button" ng-click="Parceiro.startInserting()" ng-hide="Parceiro.inserting || Parceiro.editing"><i class="fa fa-user"></i> <span class="">{{"template.crud.new" | translate}}</span></button>
+</div>
+<!-- fim div row para pesquisa -->
+<!--</div>-->
+
+<datasource filter="" name="Parceiro" entity="api/rest/Parceiro" keys="id" rows-per-page="100" delete-message="Deseja remover?" class=""></datasource>
+<div class="component-holder" data-component="crn-grid" id="crn-grid-Parceiro">
+    <div crn-datasource="Parceiro" class="" ng-hide="Parceiro.editing || Parceiro.inserting">
+        <table class="table  table-bordered table-hover table-striped">
+            <thead>
+            <tr class="table-header">
+                <th class="">
+                    <div class="">Id</div>
+                </th>
+                <th class="">
+                    <div class="">Cpf Cnpj</div>
+                </th>
+                <th class="">
+                    <div class="">Inscricao Estadual</div>
+                </th>
+                <th class="">
+                    <div class="">Razao Social Nome</div>
+                </th>
+                <th class="">
+                    <div class="">Competencias</div>
+                </th>
+                <th class="">
+                    <div class="">Numero Colaboradores</div>
+                </th>
+                <th class="">
+                    <div class="">Produtos Servicos</div>
+                </th>
+                <th class="">
+                    <div class="">Mercado Alvo</div>
+                </th>
+                <th class="">
+                    <div class="">Clientes Atuais</div>
+                </th>
+                <th class="">
+                    <div class="">Motivo</div>
+                </th>
+                <th class="">
+                    <div class="">User</div>
+                </th>
+                <th class="">
+                    <div class="">Endereco</div>
+                </th>
+                <th class="">
+                    <div class="">Nome Fantasia</div>
+                </th>
+                <th class="">
+                    <div class="">Website</div>
+                </th>
+                <th class="">
+                    <div class="">Telefone</div>
+                </th>
+                <th class="">
+                    <div class="">Data Cadastro</div>
+                </th>
+                <th class="">
+                    <div class="">Descricao Empresa</div>
+                </th>
+                <th class="">
+                    <div class="">Nivel Parceria</div>
+                </th>
+                <th class="">
+                    <div class="">Data Alteracao</div>
+                </th>
+                <th class="">
+                    <div class="">{{"template.crud.actions" | translate}}</div>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="table-content" ng-repeat="rowData in datasource.data">
+                <td class="">
+                    <div class="">
+                                {{rowData.id  }}
+                    </div>
+                </td>
+                <td class="">
+                    <div class="">
+                                {{rowData.cpfCnpj  }}
+                    </div>
+                </td>
+                <td class="">
+                    <div class="">
+                                {{rowData.inscricaoEstadual  }}
+                    </div>
+                </td>
+                <td class="">
+                    <div class="">
+                                {{rowData.razaoSocialNome  }}
+                    </div>
+                </td>
+                <td class="">
+                    <div class="">
+                                {{rowData.competencias  }}
+                    </div>
+                </td>
+                <td class="">
+                    <div class="">
+                                {{rowData.numeroColaboradores  }}
+                    </div>
+                </td>
+                <td class="">
+                    <div class="">
+                                {{rowData.produtosServicos  }}
+                    </div>
+                </td>
+                <td class="">
+                    <div class="">
+                                {{rowData.mercadoAlvo  }}
+                    </div>
+                </td>
+                <td class="">
+                    <div class="">
+                                {{rowData.clientesAtuais  }}
+                    </div>
+                </td>
+                <td class="">
+                    <div class="">
+                                {{rowData.motivo  }}
+                    </div>
+                </td>
+                <td class="">
+                    <div class="">
+                            {{rowData.user.login}}
+                    </div>
+                </td>
+                <td class="">
+                    <div class="">
+                            {{rowData.endereco.logradouro}}
+                    </div>
+                </td>
+                <td class="">
+                    <div class="">
+                                {{rowData.nomeFantasia  }}
+                    </div>
+                </td>
+                <td class="">
+                    <div class="">
+                                {{rowData.website  }}
+                    </div>
+                </td>
+                <td class="">
+                    <div class="">
+                                {{rowData.telefone  }}
+                    </div>
+                </td>
+                <td class="">
+                    <div class="">
+                                {{rowData.dataCadastro | date:'dd/MM/yyyy'}}
+                    </div>
+                </td>
+                <td class="">
+                    <div class="">
+                                {{rowData.descricaoEmpresa  }}
+                    </div>
+                </td>
+                <td class="">
+                    <div class="">
+                                {{rowData.nivelParceria  }}
+                    </div>
+                </td>
+                <td class="">
+                    <div class="">
+                                {{rowData.dataAlteracao | date:'dd/MM/yyyy HH:mm:ss'}}
+                    </div>
+                </td>
+                <td class="">
+                    <div class="">
+                        <button class="btn btn-default btn-sm" data-component="crn-button" type="submit" ng-click="datasource.startEditing(rowData)"><i class="fa fa-edit"></i></button>
+                        <button class="btn btn-default btn-sm" data-component="crn-button" type="submit" ng-click="datasource.remove(rowData)"><i class="fa fa-times"></i></button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="table-footer-controls">
+            <button class="btn btn-default btn-block btn-clicked" data-component="crn-button" ng-show="datasource.hasNextPage()" ng-click="datasource.nextPage()">{{"template.crud.load_more" | translate}}...</button>
+        </div>
+    </div>
+</div>
+<div data-component="crn-form" id="crn-form-form-Parceiro">
+    <div class="form" ng-show="Parceiro.editing || Parceiro.inserting">
+        <form crn-datasource="Parceiro" class="">
+            <div class="tool-bar" ng-hide="datasource.editing || datasource.inserting">
+                <button class="btn btn-primary" data-component="crn-button" ng-click="datasource.startInserting()"><i class="glyphicon glyphicon-plus-sign"></i></button>
+                <button class="btn btn-success" data-component="crn-button" ng-click="datasource.startEditing()"><i class="glyphicon glyphicon-edit"></i></button>
+                <button class="btn btn-primary" data-component="crn-button" ng-disabled="!datasource.hasPrevious()" ng-click="datasource.previous()"><i class="glyphicon glyphicon-chevron-left"></i></button>
+                <button class="btn btn-primary" data-component="crn-button" ng-disabled="!datasource.hasNext()" ng-click="datasource.next()"><i class="glyphicon glyphicon-chevron-right"></i></button>
+                <button class="btn btn-primary" data-component="crn-button" ng-click="datasource.remove()"><i class="glyphicon glyphicon-trash"></i></button>
+            </div>
+            <div class="active-bar" ng-hide="!datasource.editing &amp;&amp; !datasource.inserting">
+                <button class="btn btn-success" data-component="crn-button" ng-click="datasource.post()"><i class="glyphicon glyphicon-ok"></i></button>
+                <button class="btn btn-danger" data-component="crn-button" ng-click="datasource.cancel()"><i class="glyphicon glyphicon-remove"></i></button>
+            </div>
+            <br/>
+            <fieldset ng-disabled="!datasource.editing &amp;&amp; !datasource.inserting">
+
+                <div data-component="crn-textinput" id="crn-textinput-cpfCnpj" class="">
+                    <div class="form-group">
+                        <label for="textinput-cpfCnpj" class="">Cpf Cnpj</label>
+
+                                <input
+                                            type="text"
+                                            ng-model="Parceiro.active.cpfCnpj"
+                                            class="form-control"
+                                            id="textinput-cpfCnpj"
+                                            placeholder="Cpf Cnpj"
+                                            required="required">
+                         <!-- end if !model.hasCronappFramework() -->
+                    </div>
+                </div>
+
+                <div data-component="crn-textinput" id="crn-textinput-inscricaoEstadual" class="">
+                    <div class="form-group">
+                        <label for="textinput-inscricaoEstadual" class="">Inscricao Estadual</label>
+
+                                <input
+                                            type="text"
+                                            ng-model="Parceiro.active.inscricaoEstadual"
+                                            class="form-control"
+                                            id="textinput-inscricaoEstadual"
+                                            placeholder="Inscricao Estadual"
+                                            >
+                         <!-- end if !model.hasCronappFramework() -->
+                    </div>
+                </div>
+
+                <div data-component="crn-textinput" id="crn-textinput-razaoSocialNome" class="">
+                    <div class="form-group">
+                        <label for="textinput-razaoSocialNome" class="">Razao Social Nome</label>
+
+                                <input
+                                            type="text"
+                                            ng-model="Parceiro.active.razaoSocialNome"
+                                            class="form-control"
+                                            id="textinput-razaoSocialNome"
+                                            placeholder="Razao Social Nome"
+                                            required="required">
+                         <!-- end if !model.hasCronappFramework() -->
+                    </div>
+                </div>
+
+                <div data-component="crn-textinput" id="crn-textinput-competencias" class="">
+                    <div class="form-group">
+                        <label for="textinput-competencias" class="">Competencias</label>
+
+                                <input
+                                            type="text"
+                                            ng-model="Parceiro.active.competencias"
+                                            class="form-control"
+                                            id="textinput-competencias"
+                                            placeholder="Competencias"
+                                            >
+                         <!-- end if !model.hasCronappFramework() -->
+                    </div>
+                </div>
+
+                <div data-component="crn-textinput" id="crn-textinput-numeroColaboradores" class="">
+                    <div class="form-group">
+                        <label for="textinput-numeroColaboradores" class="">Numero Colaboradores</label>
+
+                                <input type="number"  ng-model="Parceiro.active.numeroColaboradores" class="form-control" id="textinput-numeroColaboradores" placeholder="Numero Colaboradores" >
+                         <!-- end if !model.hasCronappFramework() -->
+                    </div>
+                </div>
+
+                <div data-component="crn-textinput" id="crn-textinput-produtosServicos" class="">
+                    <div class="form-group">
+                        <label for="textinput-produtosServicos" class="">Produtos Servicos</label>
+
+                                <input
+                                            type="text"
+                                            ng-model="Parceiro.active.produtosServicos"
+                                            class="form-control"
+                                            id="textinput-produtosServicos"
+                                            placeholder="Produtos Servicos"
+                                            >
+                         <!-- end if !model.hasCronappFramework() -->
+                    </div>
+                </div>
+
+                <div data-component="crn-textinput" id="crn-textinput-mercadoAlvo" class="">
+                    <div class="form-group">
+                        <label for="textinput-mercadoAlvo" class="">Mercado Alvo</label>
+
+                                <input
+                                            type="text"
+                                            ng-model="Parceiro.active.mercadoAlvo"
+                                            class="form-control"
+                                            id="textinput-mercadoAlvo"
+                                            placeholder="Mercado Alvo"
+                                            >
+                         <!-- end if !model.hasCronappFramework() -->
+                    </div>
+                </div>
+
+                <div data-component="crn-textinput" id="crn-textinput-clientesAtuais" class="">
+                    <div class="form-group">
+                        <label for="textinput-clientesAtuais" class="">Clientes Atuais</label>
+
+                                <input
+                                            type="text"
+                                            ng-model="Parceiro.active.clientesAtuais"
+                                            class="form-control"
+                                            id="textinput-clientesAtuais"
+                                            placeholder="Clientes Atuais"
+                                            >
+                         <!-- end if !model.hasCronappFramework() -->
+                    </div>
+                </div>
+
+                <div data-component="crn-textinput" id="crn-textinput-motivo" class="">
+                    <div class="form-group">
+                        <label for="textinput-motivo" class="">Motivo</label>
+
+                                <input
+                                            type="text"
+                                            ng-model="Parceiro.active.motivo"
+                                            class="form-control"
+                                            id="textinput-motivo"
+                                            placeholder="Motivo"
+                                            >
+                         <!-- end if !model.hasCronappFramework() -->
+                    </div>
+                </div>
+                    <datasource name="User" entity="api/security/User" keys="id" class="" dependent-by="{{Parceiro}}"></datasource>
+
+                <div data-component="crn-combobox-dynamic" id="crn-combobox-dynamic-user" class="">
+                    <div class="form-group">
+                        <label for="combobox-dynamic-user" class="">User</label>
+
+                                <ui-select ng-model="Parceiro.active.user" crn-datasource="User" class="crn-select" id="combobox-dynamic-user"  theme="bootstrap">
+                                    <ui-select-match class="" placeholder="Select...">
+                                        {{$select.selected.login}}
+                                    </ui-select-match>
+                                    <ui-select-choices  repeat="rowData in datasource.data | filter : $select.search" class="" refresh="" refresh-deplay="">
+                                        <div class="" data-container="true">
+                                            {{rowData.login}}
+                                        </div>
+                                    </ui-select-choices>
+                                </ui-select>
+                         <!-- end if !model.hasCronappFramework() -->
+                    </div>
+                </div>
+                    <datasource name="Endereco" entity="api/rest/Endereco" keys="id" class="" dependent-by="{{Parceiro}}"></datasource>
+
+                <div data-component="crn-combobox-dynamic" id="crn-combobox-dynamic-endereco" class="">
+                    <div class="form-group">
+                        <label for="combobox-dynamic-endereco" class="">Endereco</label>
+
+                                <ui-select ng-model="Parceiro.active.endereco" crn-datasource="Endereco" class="crn-select" id="combobox-dynamic-endereco"  theme="bootstrap">
+                                    <ui-select-match class="" placeholder="Select...">
+                                        {{$select.selected.logradouro}}
+                                    </ui-select-match>
+                                    <ui-select-choices  repeat="rowData in datasource.data | filter : $select.search" class="" refresh="" refresh-deplay="">
+                                        <div class="" data-container="true">
+                                            {{rowData.logradouro}}
+                                        </div>
+                                    </ui-select-choices>
+                                </ui-select>
+                         <!-- end if !model.hasCronappFramework() -->
+                    </div>
+                </div>
+
+                <div data-component="crn-textinput" id="crn-textinput-nomeFantasia" class="">
+                    <div class="form-group">
+                        <label for="textinput-nomeFantasia" class="">Nome Fantasia</label>
+
+                                <input
+                                            type="text"
+                                            ng-model="Parceiro.active.nomeFantasia"
+                                            class="form-control"
+                                            id="textinput-nomeFantasia"
+                                            placeholder="Nome Fantasia"
+                                            >
+                         <!-- end if !model.hasCronappFramework() -->
+                    </div>
+                </div>
+
+                <div data-component="crn-textinput" id="crn-textinput-website" class="">
+                    <div class="form-group">
+                        <label for="textinput-website" class="">Website</label>
+
+                                <input
+                                            type="text"
+                                            ng-model="Parceiro.active.website"
+                                            class="form-control"
+                                            id="textinput-website"
+                                            placeholder="Website"
+                                            >
+                         <!-- end if !model.hasCronappFramework() -->
+                    </div>
+                </div>
+
+                <div data-component="crn-textinput" id="crn-textinput-telefone" class="">
+                    <div class="form-group">
+                        <label for="textinput-telefone" class="">Telefone</label>
+
+                                <input
+                                            type="text"
+                                            ng-model="Parceiro.active.telefone"
+                                            class="form-control"
+                                            id="textinput-telefone"
+                                            placeholder="Telefone"
+                                            >
+                         <!-- end if !model.hasCronappFramework() -->
+                    </div>
+                </div>
+
+                <div data-component="crn-textinput" id="crn-textinput-dataCadastro" class="">
+                    <div class="form-group">
+                        <label for="textinput-dataCadastro" class="">Data Cadastro</label>
+
+                                <div style="position:relative">
+                                    <input type="text" as-date
+                                           format="DD/MM/YYYY"
+                                           ng-model="Parceiro.active.dataCadastro" class="form-control" id="textinput-dataCadastro" placeholder="Data Cadastro" required="required">
+                                </div>
+                         <!-- end if !model.hasCronappFramework() -->
+                    </div>
+                </div>
+
+                <div data-component="crn-textinput" id="crn-textinput-descricaoEmpresa" class="">
+                    <div class="form-group">
+                        <label for="textinput-descricaoEmpresa" class="">Descricao Empresa</label>
+
+                                <input
+                                            type="text"
+                                            ng-model="Parceiro.active.descricaoEmpresa"
+                                            class="form-control"
+                                            id="textinput-descricaoEmpresa"
+                                            placeholder="Descricao Empresa"
+                                            >
+                         <!-- end if !model.hasCronappFramework() -->
+                    </div>
+                </div>
+
+                <div data-component="crn-textinput" id="crn-textinput-nivelParceria" class="">
+                    <div class="form-group">
+                        <label for="textinput-nivelParceria" class="">Nivel Parceria</label>
+
+                                <input
+                                            type="text"
+                                            ng-model="Parceiro.active.nivelParceria"
+                                            class="form-control"
+                                            id="textinput-nivelParceria"
+                                            placeholder="Nivel Parceria"
+                                            >
+                         <!-- end if !model.hasCronappFramework() -->
+                    </div>
+                </div>
+
+                <div data-component="crn-textinput" id="crn-textinput-dataAlteracao" class="">
+                    <div class="form-group">
+                        <label for="textinput-dataAlteracao" class="">Data Alteracao</label>
+
+                                <div style="position:relative">
+                                    <input type="text" as-date
+                                           format="DD/MM/YYYY HH:mm:ss"
+                                           ng-model="Parceiro.active.dataAlteracao" class="form-control" id="textinput-dataAlteracao" placeholder="Data Alteracao" required="required">
+                                </div>
+                         <!-- end if !model.hasCronappFramework() -->
+                    </div>
+                </div>
+                <!-- NtoN  -->
+                <datasource append="false" name="Cliente_2" entity="api/rest/Parceiro/{{Parceiro.active.id}}/Cliente_2" keys="id" rows-per-page="100" lazy="true" auto-post="true" enabled="{{Parceiro.editing || Parceiro.inserting}}"dependent-lazy-post="Parceiro" dependent-lazy-post-field="parceiro"></datasource>
+                <datasource name="AllCliente_2" entity="api/rest/Cliente" keys="id" rows-per-page="100" enabled="{{Parceiro.editing || Parceiro.inserting}}"></datasource>
+                    <div class="component-holder ng-binding ng-scope " data-component="crn-combobox" ng-show="datasource.editing || datasource.inserting" >
+                        <div class="form-group">
+                            <label for="select-ui">Cliente_2</label>
+                            <div id="select-ui" data-component="crn-tags">
+                                <ui-select multiple crn-datasource="AllCliente_2" ng-model="Cliente_2.data" class="crn-select" style="min-width: 200px" theme="bootstrap" enabled="{{Parceiro.editing || Parceiro.inserting }}" >
+                                    <ui-select-match placeholder="Cliente_2...">
+                                        {{$item.razaoSocial }}
+                                    </ui-select-match>
+                                    <ui-select-choices repeat="rowData in datasource.data | filter : $select.search" class="">
+                                        <div class="" data-container="true" draggable="true">
+                                            {{rowData.razaoSocial}}
+                                        </div>
+                                    </ui-select-choices>
+                                </ui-select>
+                            </div>
+                        </div>
+                    </div>
+                <!-- NtoN  end-->
+            </fieldset>
+        </form>
+        <form>
+            <fieldset>
+                <!-- OneToN -->
+                <!--query filter 1toN -->
+                <!-- query filter 1toN end-->
+                <datasource filter="" name="UserGrid" enabled="{{Parceiro.editing || Parceiro.inserting}}" entity="api/rest/Parceiro/{{Parceiro.active.id}}/User" keys="id" rows-per-page="100" lazy="true" auto-post="true" dependent-lazy-post="Parceiro" dependent-lazy-post-field="parceiro"></datasource>
+                <div data-component="crn-button" class="">
+                    <button class="btn btn-primary" onclick="$('#modalUserGrid').modal('show');" data-component="crn-button" ng-click="UserGrid.startInserting();"><i class="fa fa-plus"></i> 
+						<span class="">{{"Add" | translate}} User</span> 
+					</button>
+                </div>
+                <!--search 1toN-->
+                <!-- seach 1toN end-->
+                <div data-component="crn-textinput" id="crn-textinput-descricao">
+                    <div class="form-group">
+                        <label for="textinput-descricao" class="">
+							User
+						</label>
+                        <div class="component-holder" data-component="crn-grid" id="crn-grid-UserGrid">
+                            <div crn-datasource="UserGrid">
+                                <table class="table table-bordered table-hover table-striped">
+                                    <thead>
+                                    <tr class="table-header">
+                                                <th class="">
+                                                    <div class="">
+                                                        Login
+                                                    </div>
+                                                </th>
+                                                <th class="">
+                                                    <div class="">
+                                                        Password
+                                                    </div>
+                                                </th>
+                                                <th class="">
+                                                    <div class="">
+                                                        Ativo
+                                                    </div>
+                                                </th>
+                                        <th class="">
+                                            <div class="">
+                                                {{"template.crud.actions" | translate}}
+                                            </div>
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr class="table-content" ng-repeat="rowData in datasource.data">
+                                                <td>
+                                                    <div>
+                                                            {{rowData.login }}
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                            {{rowData.password }}
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                            {{rowData.ativo }}
+                                                    </div>
+                                                </td>
+                                        <td>
+                                            <div>
+                                                <button class="btn btn-default btn-sm" data-component="crn-button" ng-click="datasource.startEditing(rowData)" onclick="$('#modalUserGrid').modal('show');" ><i class="fa fa-edit"></i></button>
+                                                <button class="btn btn-default btn-sm" data-component="crn-button" ng-click="datasource.remove(rowData)"><i class="fa fa-times"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <div class="table-footer-controls">
+                                    <button class="btn btn-default btn-block btn-clicked" data-component="crn-button" ng-show="datasource.hasNextPage()" ng-click="datasource.nextPage()" content="{{&quot;template.crud.load_more&quot; | translate}}...">{{"template.crud.load_more" | translate}}...</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--query filter 1toN -->
+                <!-- query filter 1toN end-->
+                <datasource filter="" name="ClienteGrid" enabled="{{Parceiro.editing || Parceiro.inserting}}" entity="api/rest/Parceiro/{{Parceiro.active.id}}/Cliente" keys="id" rows-per-page="100" lazy="true" auto-post="true" dependent-lazy-post="Parceiro" dependent-lazy-post-field="parceiro"></datasource>
+                <div data-component="crn-button" class="">
+                    <button class="btn btn-primary" onclick="$('#modalClienteGrid').modal('show');" data-component="crn-button" ng-click="ClienteGrid.startInserting();"><i class="fa fa-plus"></i> 
+						<span class="">{{"Add" | translate}} </span> 
+					</button>
+                </div>
+                <!--search 1toN-->
+                <!-- seach 1toN end-->
+                <div data-component="crn-textinput" id="crn-textinput-descricao">
+                    <div class="form-group">
+                        <label for="textinput-descricao" class="">
+							
+						</label>
+                        <div class="component-holder" data-component="crn-grid" id="crn-grid-ClienteGrid">
+                            <div crn-datasource="ClienteGrid">
+                                <table class="table table-bordered table-hover table-striped">
+                                    <thead>
+                                    <tr class="table-header">
+                                                <th class="">
+                                                    <div class="">
+                                                        Razao Social
+                                                    </div>
+                                                </th>
+                                                <th class="">
+                                                    <div class="">
+                                                        Seguimento
+                                                    </div>
+                                                </th>
+                                                <th class="">
+                                                    <div class="">
+                                                        Faturamento
+                                                    </div>
+                                                </th>
+                                                <th class="">
+                                                    <div class="">
+                                                        Cnpj
+                                                    </div>
+                                                </th>
+                                                <th class="">
+                                                    <div class="">
+                                                        Classificacao
+                                                    </div>
+                                                </th>
+                                                <th class="">
+                                                    <div class="">
+                                                        Endereco
+                                                    </div>
+                                                </th>
+                                                <th class="">
+                                                    <div class="">
+                                                        Informacoes Adicionais
+                                                    </div>
+                                                </th>
+                                                <th class="">
+                                                    <div class="">
+                                                        Data Alteracao
+                                                    </div>
+                                                </th>
+                                        <th class="">
+                                            <div class="">
+                                                {{"template.crud.actions" | translate}}
+                                            </div>
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr class="table-content" ng-repeat="rowData in datasource.data">
+                                                <td>
+                                                    <div>
+                                                            {{rowData.razaoSocial }}
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                            {{rowData.seguimento }}
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                            {{rowData.faturamento }}
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                            {{rowData.cnpj }}
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                            {{rowData.classificacao }}
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                            {{rowData.endereco.logradouro }}
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                            {{rowData.informacoesAdicionais }}
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                            {{rowData.dataAlteracao | date:'dd/MM/yyyy HH:mm:ss'}}
+                                                    </div>
+                                                </td>
+                                        <td>
+                                            <div>
+                                                <button class="btn btn-default btn-sm" data-component="crn-button" ng-click="datasource.startEditing(rowData)" onclick="$('#modalClienteGrid').modal('show');" ><i class="fa fa-edit"></i></button>
+                                                <button class="btn btn-default btn-sm" data-component="crn-button" ng-click="datasource.remove(rowData)"><i class="fa fa-times"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <div class="table-footer-controls">
+                                    <button class="btn btn-default btn-block btn-clicked" data-component="crn-button" ng-show="datasource.hasNextPage()" ng-click="datasource.nextPage()" content="{{&quot;template.crud.load_more&quot; | translate}}...">{{"template.crud.load_more" | translate}}...</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--query filter 1toN -->
+                <!-- query filter 1toN end-->
+                <datasource filter="" name="OportunidadeGrid" enabled="{{Parceiro.editing || Parceiro.inserting}}" entity="api/rest/Parceiro/{{Parceiro.active.id}}/Oportunidade" keys="id" rows-per-page="100" lazy="true" auto-post="true" dependent-lazy-post="Parceiro" dependent-lazy-post-field="parceiro"></datasource>
+                <div data-component="crn-button" class="">
+                    <button class="btn btn-primary" onclick="$('#modalOportunidadeGrid').modal('show');" data-component="crn-button" ng-click="OportunidadeGrid.startInserting();"><i class="fa fa-plus"></i> 
+						<span class="">{{"Add" | translate}} </span> 
+					</button>
+                </div>
+                <!--search 1toN-->
+                <!-- seach 1toN end-->
+                <div data-component="crn-textinput" id="crn-textinput-descricao">
+                    <div class="form-group">
+                        <label for="textinput-descricao" class="">
+							
+						</label>
+                        <div class="component-holder" data-component="crn-grid" id="crn-grid-OportunidadeGrid">
+                            <div crn-datasource="OportunidadeGrid">
+                                <table class="table table-bordered table-hover table-striped">
+                                    <thead>
+                                    <tr class="table-header">
+                                                <th class="">
+                                                    <div class="">
+                                                        Estagio
+                                                    </div>
+                                                </th>
+                                                <th class="">
+                                                    <div class="">
+                                                        Data Cadastro
+                                                    </div>
+                                                </th>
+                                                <th class="">
+                                                    <div class="">
+                                                        Valor
+                                                    </div>
+                                                </th>
+                                                <th class="">
+                                                    <div class="">
+                                                        Status
+                                                    </div>
+                                                </th>
+                                                <th class="">
+                                                    <div class="">
+                                                        Tipo
+                                                    </div>
+                                                </th>
+                                                <th class="">
+                                                    <div class="">
+                                                        Cliente
+                                                    </div>
+                                                </th>
+                                                <th class="">
+                                                    <div class="">
+                                                        Produto
+                                                    </div>
+                                                </th>
+                                                <th class="">
+                                                    <div class="">
+                                                        Data Alteracao
+                                                    </div>
+                                                </th>
+                                        <th class="">
+                                            <div class="">
+                                                {{"template.crud.actions" | translate}}
+                                            </div>
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr class="table-content" ng-repeat="rowData in datasource.data">
+                                                <td>
+                                                    <div>
+                                                            {{rowData.estagio }}
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                            {{rowData.dataCadastro }}
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                            {{rowData.valor }}
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                            {{rowData.status }}
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                            {{rowData.tipo }}
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                            {{rowData.cliente.razaoSocial }}
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                            {{rowData.produto.nome }}
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                            {{rowData.dataAlteracao | date:'dd/MM/yyyy HH:mm:ss'}}
+                                                    </div>
+                                                </td>
+                                        <td>
+                                            <div>
+                                                <button class="btn btn-default btn-sm" data-component="crn-button" ng-click="datasource.startEditing(rowData)" onclick="$('#modalOportunidadeGrid').modal('show');" ><i class="fa fa-edit"></i></button>
+                                                <button class="btn btn-default btn-sm" data-component="crn-button" ng-click="datasource.remove(rowData)"><i class="fa fa-times"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <div class="table-footer-controls">
+                                    <button class="btn btn-default btn-block btn-clicked" data-component="crn-button" ng-show="datasource.hasNextPage()" ng-click="datasource.nextPage()" content="{{&quot;template.crud.load_more&quot; | translate}}...">{{"template.crud.load_more" | translate}}...</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--query filter 1toN -->
+                <!-- query filter 1toN end-->
+                <datasource filter="" name="ContatoGrid" enabled="{{Parceiro.editing || Parceiro.inserting}}" entity="api/rest/Parceiro/{{Parceiro.active.id}}/Contato" keys="id" rows-per-page="100" lazy="true" auto-post="true" dependent-lazy-post="Parceiro" dependent-lazy-post-field="parceiro"></datasource>
+                <div data-component="crn-button" class="">
+                    <button class="btn btn-primary" onclick="$('#modalContatoGrid').modal('show');" data-component="crn-button" ng-click="ContatoGrid.startInserting();"><i class="fa fa-plus"></i> 
+						<span class="">{{"Add" | translate}} </span> 
+					</button>
+                </div>
+                <!--search 1toN-->
+                <!-- seach 1toN end-->
+                <div data-component="crn-textinput" id="crn-textinput-descricao">
+                    <div class="form-group">
+                        <label for="textinput-descricao" class="">
+							
+						</label>
+                        <div class="component-holder" data-component="crn-grid" id="crn-grid-ContatoGrid">
+                            <div crn-datasource="ContatoGrid">
+                                <table class="table table-bordered table-hover table-striped">
+                                    <thead>
+                                    <tr class="table-header">
+                                                <th class="">
+                                                    <div class="">
+                                                        Nome
+                                                    </div>
+                                                </th>
+                                                <th class="">
+                                                    <div class="">
+                                                        Telefones
+                                                    </div>
+                                                </th>
+                                                <th class="">
+                                                    <div class="">
+                                                        Informacoes Adicionais
+                                                    </div>
+                                                </th>
+                                                <th class="">
+                                                    <div class="">
+                                                        Email
+                                                    </div>
+                                                </th>
+                                                <th class="">
+                                                    <div class="">
+                                                        Cargo
+                                                    </div>
+                                                </th>
+                                                <th class="">
+                                                    <div class="">
+                                                        Tipo
+                                                    </div>
+                                                </th>
+                                                <th class="">
+                                                    <div class="">
+                                                        Skype
+                                                    </div>
+                                                </th>
+                                                <th class="">
+                                                    <div class="">
+                                                        Cliente
+                                                    </div>
+                                                </th>
+                                        <th class="">
+                                            <div class="">
+                                                {{"template.crud.actions" | translate}}
+                                            </div>
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr class="table-content" ng-repeat="rowData in datasource.data">
+                                                <td>
+                                                    <div>
+                                                            {{rowData.nome }}
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                            {{rowData.telefones }}
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                            {{rowData.informacoesAdicionais }}
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                            {{rowData.email }}
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                            {{rowData.cargo }}
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                            {{rowData.tipo }}
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                            {{rowData.skype }}
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                            {{rowData.cliente.razaoSocial }}
+                                                    </div>
+                                                </td>
+                                        <td>
+                                            <div>
+                                                <button class="btn btn-default btn-sm" data-component="crn-button" ng-click="datasource.startEditing(rowData)" onclick="$('#modalContatoGrid').modal('show');" ><i class="fa fa-edit"></i></button>
+                                                <button class="btn btn-default btn-sm" data-component="crn-button" ng-click="datasource.remove(rowData)"><i class="fa fa-times"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <div class="table-footer-controls">
+                                    <button class="btn btn-default btn-block btn-clicked" data-component="crn-button" ng-show="datasource.hasNextPage()" ng-click="datasource.nextPage()" content="{{&quot;template.crud.load_more&quot; | translate}}...">{{"template.crud.load_more" | translate}}...</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--query filter 1toN -->
+                <!-- query filter 1toN end-->
+                <datasource filter="" name="ScanDocumentoGrid" enabled="{{Parceiro.editing || Parceiro.inserting}}" entity="api/rest/Parceiro/{{Parceiro.active.id}}/ScanDocumento" keys="id" rows-per-page="100" lazy="true" auto-post="true" dependent-lazy-post="Parceiro" dependent-lazy-post-field="parceiro"></datasource>
+                <div data-component="crn-button" class="">
+                    <button class="btn btn-primary" onclick="$('#modalScanDocumentoGrid').modal('show');" data-component="crn-button" ng-click="ScanDocumentoGrid.startInserting();"><i class="fa fa-plus"></i> 
+						<span class="">{{"Add" | translate}} </span> 
+					</button>
+                </div>
+                <!--search 1toN-->
+                <!-- seach 1toN end-->
+                <div data-component="crn-textinput" id="crn-textinput-descricao">
+                    <div class="form-group">
+                        <label for="textinput-descricao" class="">
+							
+						</label>
+                        <div class="component-holder" data-component="crn-grid" id="crn-grid-ScanDocumentoGrid">
+                            <div crn-datasource="ScanDocumentoGrid">
+                                <table class="table table-bordered table-hover table-striped">
+                                    <thead>
+                                    <tr class="table-header">
+                                                <th class="">
+                                                    <div class="">
+                                                        Tipo Documento
+                                                    </div>
+                                                </th>
+                                                <th class="">
+                                                    <div class="">
+                                                        Data Emissao
+                                                    </div>
+                                                </th>
+                                                <th class="">
+                                                    <div class="">
+                                                        Imagem
+                                                    </div>
+                                                </th>
+                                                <th class="">
+                                                    <div class="">
+                                                        Data Alteracao
+                                                    </div>
+                                                </th>
+                                        <th class="">
+                                            <div class="">
+                                                {{"template.crud.actions" | translate}}
+                                            </div>
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr class="table-content" ng-repeat="rowData in datasource.data">
+                                                <td>
+                                                    <div>
+                                                            {{rowData.tipoDocumento }}
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                            {{rowData.dataEmissao | date:'dd/MM/yyyy'}}
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                            <a ng-if="rowData.imagem" ng-click="datasource.openImage(rowData.imagem)">
+                                                                <img data-ng-src="{{rowData.imagem.startsWith('http') || (rowData.imagem.startsWith('/') && rowData.imagem.length < 1000)? rowData.imagem : 'data:image/png;base64,' + rowData.imagem}}" style="max-height: 30px;">
+                                                            </a>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                            {{rowData.dataAlteracao | date:'dd/MM/yyyy HH:mm:ss'}}
+                                                    </div>
+                                                </td>
+                                        <td>
+                                            <div>
+                                                <button class="btn btn-default btn-sm" data-component="crn-button" ng-click="datasource.startEditing(rowData)" onclick="$('#modalScanDocumentoGrid').modal('show');" ><i class="fa fa-edit"></i></button>
+                                                <button class="btn btn-default btn-sm" data-component="crn-button" ng-click="datasource.remove(rowData)"><i class="fa fa-times"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <div class="table-footer-controls">
+                                    <button class="btn btn-default btn-block btn-clicked" data-component="crn-button" ng-show="datasource.hasNextPage()" ng-click="datasource.nextPage()" content="{{&quot;template.crud.load_more&quot; | translate}}...">{{"template.crud.load_more" | translate}}...</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- OneToOne  end -->
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+
+<!-- OneToOne modal -->
+<div class="modal fade" id="modalUserGrid">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="{{'Home.view.Close' | translate}}"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title">User</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="list-group list-group-sm row">
+                                 <!-- end if !model.hasCronappFramework() -->
+
+
+                                    <div data-component="crn-textinput"  id="crn-textinput-login" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="form-group">
+                                            <label for="textinput-login">Login</label>
+                                                <input type="text"
+                                                       ng-model="UserGrid.active.login" class="form-control" id="textinput-login" placeholder="Login"  >
+                                        </div>
+                                    </div>
+                                 <!-- end if !model.hasCronappFramework() -->
+
+
+                                    <div data-component="crn-textinput"  id="crn-textinput-password" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="form-group">
+                                            <label for="textinput-password">Password</label>
+                                                <input type="password"
+                                                       ng-model="UserGrid.active.password" class="form-control" id="textinput-password" placeholder="Password"  >
+                                        </div>
+                                    </div>
+                                 <!-- end if !model.hasCronappFramework() -->
+
+
+                                    <div data-component="crn-textinput"  id="crn-textinput-ativo" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="form-group">
+                                            <label for="textinput-ativo">Ativo</label>
+                                                <input type="checkbox" ng-model="UserGrid.active.ativo"  id="textinput-ativo" placeholder="Ativo" >
+                                        </div>
+                                    </div>
+                                 <!-- end if !model.hasCronappFramework() -->
+
+                                 <!-- end if !model.hasCronappFramework() -->
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" data-component="crn-button" ng-click="UserGrid.post();" onclick="(!UserGrid.missingRequiredField()?$('#modalUserGrid').modal('hide'):void(0))">{{'Save' | translate}}</button>
+                    <button type="button" class="btn btn-default" data-component="crn-button" data-dismiss="modal">{{'Home.view.Close' | translate}}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modalClienteGrid">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="{{'Home.view.Close' | translate}}"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title">Cliente</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="list-group list-group-sm row">
+                                 <!-- end if !model.hasCronappFramework() -->
+
+
+                                    <div data-component="crn-textinput"  id="crn-textinput-razaoSocial" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="form-group">
+                                            <label for="textinput-razaoSocial">Razao Social</label>
+                                                <input type="text"
+                                                       ng-model="ClienteGrid.active.razaoSocial" class="form-control" id="textinput-razaoSocial" placeholder="Razao Social"  >
+                                        </div>
+                                    </div>
+                                 <!-- end if !model.hasCronappFramework() -->
+
+
+                                    <div data-component="crn-textinput"  id="crn-textinput-seguimento" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="form-group">
+                                            <label for="textinput-seguimento">Seguimento</label>
+                                                <input type="text"
+                                                       ng-model="ClienteGrid.active.seguimento" class="form-control" id="textinput-seguimento" placeholder="Seguimento"  >
+                                        </div>
+                                    </div>
+                                 <!-- end if !model.hasCronappFramework() -->
+
+
+                                    <div data-component="crn-textinput"  id="crn-textinput-faturamento" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="form-group">
+                                            <label for="textinput-faturamento">Faturamento</label>
+                                                <input type="text"
+                                                       ng-model="ClienteGrid.active.faturamento" class="form-control" id="textinput-faturamento" placeholder="Faturamento"  >
+                                        </div>
+                                    </div>
+                                 <!-- end if !model.hasCronappFramework() -->
+
+
+                                    <div data-component="crn-textinput"  id="crn-textinput-cnpj" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="form-group">
+                                            <label for="textinput-cnpj">Cnpj</label>
+                                                <input type="text"
+                                                       ng-model="ClienteGrid.active.cnpj" class="form-control" id="textinput-cnpj" placeholder="Cnpj"  >
+                                        </div>
+                                    </div>
+                                 <!-- end if !model.hasCronappFramework() -->
+
+
+                                    <div data-component="crn-textinput"  id="crn-textinput-classificacao" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="form-group">
+                                            <label for="textinput-classificacao">Classificacao</label>
+                                                <input type="text"
+                                                       ng-model="ClienteGrid.active.classificacao" class="form-control" id="textinput-classificacao" placeholder="Classificacao"  >
+                                        </div>
+                                    </div>
+                                 <!-- end if !model.hasCronappFramework() -->
+
+                                 <!-- end if !model.hasCronappFramework() -->
+
+
+                                    <div data-component="crn-textinput"  id="crn-textinput-fk_endereco" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="form-group">
+                                            <label for="textinput-fk_endereco">Endereco</label>
+                                                <input type="text"
+                                                       ng-model="ClienteGrid.active.endereco" class="form-control" id="textinput-fk_endereco" placeholder="Endereco"  >
+                                        </div>
+                                    </div>
+                                 <!-- end if !model.hasCronappFramework() -->
+
+
+                                    <div data-component="crn-textinput"  id="crn-textinput-informacoesAdicionais" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="form-group">
+                                            <label for="textinput-informacoesAdicionais">Informacoes Adicionais</label>
+                                                <input type="text"
+                                                       ng-model="ClienteGrid.active.informacoesAdicionais" class="form-control" id="textinput-informacoesAdicionais" placeholder="Informacoes Adicionais"  >
+                                        </div>
+                                    </div>
+                                 <!-- end if !model.hasCronappFramework() -->
+
+
+                                    <div data-component="crn-textinput"  id="crn-textinput-dataAlteracao" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="form-group">
+                                            <label for="textinput-dataAlteracao">Data Alteracao</label>
+                                                <div style="position:relative">
+                                                    <input type="text" as-date
+                                                           format="DD/MM/YYYY HH:mm:ss"
+                                                           ng-model="ClienteGrid.active.dataAlteracao" class="form-control" id="textinput-dataAlteracao" placeholder="Data Alteracao" >
+                                                </div>
+                                        </div>
+                                    </div>
+                                 <!-- end if !model.hasCronappFramework() -->
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" data-component="crn-button" ng-click="ClienteGrid.post();" onclick="(!ClienteGrid.missingRequiredField()?$('#modalClienteGrid').modal('hide'):void(0))">{{'Save' | translate}}</button>
+                    <button type="button" class="btn btn-default" data-component="crn-button" data-dismiss="modal">{{'Home.view.Close' | translate}}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modalOportunidadeGrid">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="{{'Home.view.Close' | translate}}"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title">Oportunidade</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="list-group list-group-sm row">
+                                 <!-- end if !model.hasCronappFramework() -->
+
+
+                                    <div data-component="crn-textinput"  id="crn-textinput-estagio" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="form-group">
+                                            <label for="textinput-estagio">Estagio</label>
+                                                <input type="text"
+                                                       ng-model="OportunidadeGrid.active.estagio" class="form-control" id="textinput-estagio" placeholder="Estagio"  >
+                                        </div>
+                                    </div>
+                                 <!-- end if !model.hasCronappFramework() -->
+
+
+                                    <div data-component="crn-textinput"  id="crn-textinput-dataCadastro" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="form-group">
+                                            <label for="textinput-dataCadastro">Data Cadastro</label>
+                                                <input type="text"
+                                                       ng-model="OportunidadeGrid.active.dataCadastro" class="form-control" id="textinput-dataCadastro" placeholder="Data Cadastro"  >
+                                        </div>
+                                    </div>
+                                 <!-- end if !model.hasCronappFramework() -->
+
+
+                                    <div data-component="crn-textinput"  id="crn-textinput-valor" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="form-group">
+                                            <label for="textinput-valor">Valor</label>
+                                                <input type="text"
+                                                       ng-model="OportunidadeGrid.active.valor" class="form-control" id="textinput-valor" placeholder="Valor"  >
+                                        </div>
+                                    </div>
+                                 <!-- end if !model.hasCronappFramework() -->
+
+
+                                    <div data-component="crn-textinput"  id="crn-textinput-status" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="form-group">
+                                            <label for="textinput-status">Status</label>
+                                                <input type="text"
+                                                       ng-model="OportunidadeGrid.active.status" class="form-control" id="textinput-status" placeholder="Status"  >
+                                        </div>
+                                    </div>
+                                 <!-- end if !model.hasCronappFramework() -->
+
+
+                                    <div data-component="crn-textinput"  id="crn-textinput-tipo" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="form-group">
+                                            <label for="textinput-tipo">Tipo</label>
+                                                <input type="text"
+                                                       ng-model="OportunidadeGrid.active.tipo" class="form-control" id="textinput-tipo" placeholder="Tipo"  >
+                                        </div>
+                                    </div>
+                                 <!-- end if !model.hasCronappFramework() -->
+
+                                 <!-- end if !model.hasCronappFramework() -->
+
+
+                                    <div data-component="crn-textinput"  id="crn-textinput-fk_cliente" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="form-group">
+                                            <label for="textinput-fk_cliente">Cliente</label>
+                                                <input type="text"
+                                                       ng-model="OportunidadeGrid.active.cliente" class="form-control" id="textinput-fk_cliente" placeholder="Cliente"  >
+                                        </div>
+                                    </div>
+                                 <!-- end if !model.hasCronappFramework() -->
+
+
+                                    <div data-component="crn-textinput"  id="crn-textinput-fk_produto" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="form-group">
+                                            <label for="textinput-fk_produto">Produto</label>
+                                                <input type="text"
+                                                       ng-model="OportunidadeGrid.active.produto" class="form-control" id="textinput-fk_produto" placeholder="Produto"  >
+                                        </div>
+                                    </div>
+                                 <!-- end if !model.hasCronappFramework() -->
+
+
+                                    <div data-component="crn-textinput"  id="crn-textinput-dataAlteracao" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="form-group">
+                                            <label for="textinput-dataAlteracao">Data Alteracao</label>
+                                                <div style="position:relative">
+                                                    <input type="text" as-date
+                                                           format="DD/MM/YYYY HH:mm:ss"
+                                                           ng-model="OportunidadeGrid.active.dataAlteracao" class="form-control" id="textinput-dataAlteracao" placeholder="Data Alteracao" >
+                                                </div>
+                                        </div>
+                                    </div>
+                                 <!-- end if !model.hasCronappFramework() -->
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" data-component="crn-button" ng-click="OportunidadeGrid.post();" onclick="(!OportunidadeGrid.missingRequiredField()?$('#modalOportunidadeGrid').modal('hide'):void(0))">{{'Save' | translate}}</button>
+                    <button type="button" class="btn btn-default" data-component="crn-button" data-dismiss="modal">{{'Home.view.Close' | translate}}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modalContatoGrid">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="{{'Home.view.Close' | translate}}"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title">Contato</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="list-group list-group-sm row">
+                                 <!-- end if !model.hasCronappFramework() -->
+
+
+                                    <div data-component="crn-textinput"  id="crn-textinput-nome" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="form-group">
+                                            <label for="textinput-nome">Nome</label>
+                                                <input type="text"
+                                                       ng-model="ContatoGrid.active.nome" class="form-control" id="textinput-nome" placeholder="Nome"  >
+                                        </div>
+                                    </div>
+                                 <!-- end if !model.hasCronappFramework() -->
+
+
+                                    <div data-component="crn-textinput"  id="crn-textinput-telefones" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="form-group">
+                                            <label for="textinput-telefones">Telefones</label>
+                                                <input type="text"
+                                                       ng-model="ContatoGrid.active.telefones" class="form-control" id="textinput-telefones" placeholder="Telefones"  >
+                                        </div>
+                                    </div>
+                                 <!-- end if !model.hasCronappFramework() -->
+
+
+                                    <div data-component="crn-textinput"  id="crn-textinput-informacoesAdicionais" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="form-group">
+                                            <label for="textinput-informacoesAdicionais">Informacoes Adicionais</label>
+                                                <input type="text"
+                                                       ng-model="ContatoGrid.active.informacoesAdicionais" class="form-control" id="textinput-informacoesAdicionais" placeholder="Informacoes Adicionais"  >
+                                        </div>
+                                    </div>
+                                 <!-- end if !model.hasCronappFramework() -->
+
+
+                                    <div data-component="crn-textinput"  id="crn-textinput-email" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="form-group">
+                                            <label for="textinput-email">Email</label>
+                                                <input type="text"
+                                                       ng-model="ContatoGrid.active.email" class="form-control" id="textinput-email" placeholder="Email"  >
+                                        </div>
+                                    </div>
+                                 <!-- end if !model.hasCronappFramework() -->
+
+
+                                    <div data-component="crn-textinput"  id="crn-textinput-cargo" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="form-group">
+                                            <label for="textinput-cargo">Cargo</label>
+                                                <input type="text"
+                                                       ng-model="ContatoGrid.active.cargo" class="form-control" id="textinput-cargo" placeholder="Cargo"  >
+                                        </div>
+                                    </div>
+                                 <!-- end if !model.hasCronappFramework() -->
+
+
+                                    <div data-component="crn-textinput"  id="crn-textinput-tipo" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="form-group">
+                                            <label for="textinput-tipo">Tipo</label>
+                                                <input type="text"
+                                                       ng-model="ContatoGrid.active.tipo" class="form-control" id="textinput-tipo" placeholder="Tipo"  >
+                                        </div>
+                                    </div>
+                                 <!-- end if !model.hasCronappFramework() -->
+
+
+                                    <div data-component="crn-textinput"  id="crn-textinput-skype" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="form-group">
+                                            <label for="textinput-skype">Skype</label>
+                                                <input type="text"
+                                                       ng-model="ContatoGrid.active.skype" class="form-control" id="textinput-skype" placeholder="Skype"  >
+                                        </div>
+                                    </div>
+                                 <!-- end if !model.hasCronappFramework() -->
+
+                                 <!-- end if !model.hasCronappFramework() -->
+
+                                        <datasource name="ClienteGridForUiSelect" entity="api/rest/Cliente" keys="id" rows-per-page="100" lazy="true" enabled="{{Parceiro.editing || Parceiro.inserting}}" ></datasource>
+                                        <div data-component="crn-combobox-dynamic" id="crn-combobox-ContatoGrid.active.cliente" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                            <div class="form-group">
+                                                <label for="combobox-cliente" class="">Cliente</label>
+                                                <ui-select ng-model="ContatoGrid.active.cliente" crn-datasource="ClienteGridForUiSelect" class="crn-select" id="combobox-cliente" required="required" ng-disabled="disabled" theme="bootstrap" >
+                                                    <ui-select-match placeholder="Select..." class="">
+                                                        {{$select.selected.razaoSocial}}
+                                                    </ui-select-match>
+                                                    <ui-select-choices repeat="rowData in datasource.data | filter : $select.search" class="" refresh="" refresh-deplay="">
+                                                        <div class="">
+                                                            {{rowData.razaoSocial}}
+                                                        </div>
+                                                    </ui-select-choices>
+                                                </ui-select>
+                                            </div>
+                                        </div>
+                                 <!-- end if !model.hasCronappFramework() -->
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" data-component="crn-button" ng-click="ContatoGrid.post();" onclick="(!ContatoGrid.missingRequiredField()?$('#modalContatoGrid').modal('hide'):void(0))">{{'Save' | translate}}</button>
+                    <button type="button" class="btn btn-default" data-component="crn-button" data-dismiss="modal">{{'Home.view.Close' | translate}}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modalScanDocumentoGrid">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="{{'Home.view.Close' | translate}}"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title">ScanDocumento</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="list-group list-group-sm row">
+                                 <!-- end if !model.hasCronappFramework() -->
+
+
+                                    <div data-component="crn-textinput"  id="crn-textinput-tipoDocumento" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="form-group">
+                                            <label for="textinput-tipoDocumento">Tipo Documento</label>
+                                                <input type="text"
+                                                       ng-model="ScanDocumentoGrid.active.tipoDocumento" class="form-control" id="textinput-tipoDocumento" placeholder="Tipo Documento"  >
+                                        </div>
+                                    </div>
+                                 <!-- end if !model.hasCronappFramework() -->
+
+
+                                    <div data-component="crn-textinput"  id="crn-textinput-dataEmissao" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="form-group">
+                                            <label for="textinput-dataEmissao">Data Emissao</label>
+                                                <div style="position:relative">
+                                                    <input type="text" as-date
+                                                           format="DD/MM/YYYY"
+                                                           ng-model="ScanDocumentoGrid.active.dataEmissao" class="form-control" id="textinput-dataEmissao" placeholder="Data Emissao" >
+                                                </div>
+                                        </div>
+                                    </div>
+                                 <!-- end if !model.hasCronappFramework() -->
+
+
+                                    <div data-component="crn-textinput"  id="crn-textinput-imagem" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="form-group">
+                                            <label for="textinput-imagem">Imagem</label>
+                                                <div class="form-group upload-image-component" ngf-drop ngf-drag-over-class="dragover">
+                                                    <img style="max-height: 128px; max-width: 128px;"
+                                                         ng-if="ScanDocumentoGrid.active.imagem"
+                                                         data-ng-src="{{'data:image/png;base64,' + ScanDocumentoGrid.active.imagem}}">
+                                                    <img data-ng-src="{{ScanDocumentoGrid.noImageUpload}}"
+                                                         style="max-height: 128px; max-width: 128px;"
+                                                         class="btn"
+                                                         ng-if="!ScanDocumentoGrid.active.imagem"
+                                                         ngf-drop ngf-select ngf-change="ScanDocumentoGrid.setFile($file, ScanDocumentoGrid.active, 'imagem')" accept="image/*">
+                                                    <div class="remove btn btn-danger btn-xs" ng-if="ScanDocumentoGrid.active.imagem" ng-click="ScanDocumentoGrid.active.imagem=null">
+                                                        <span class="glyphicon glyphicon-remove"></span>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                    </div>
+                                 <!-- end if !model.hasCronappFramework() -->
+
+
+                                    <div data-component="crn-textinput"  id="crn-textinput-dataAlteracao" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <div class="form-group">
+                                            <label for="textinput-dataAlteracao">Data Alteracao</label>
+                                                <div style="position:relative">
+                                                    <input type="text" as-date
+                                                           format="DD/MM/YYYY HH:mm:ss"
+                                                           ng-model="ScanDocumentoGrid.active.dataAlteracao" class="form-control" id="textinput-dataAlteracao" placeholder="Data Alteracao" >
+                                                </div>
+                                        </div>
+                                    </div>
+                                 <!-- end if !model.hasCronappFramework() -->
+
+                                 <!-- end if !model.hasCronappFramework() -->
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" data-component="crn-button" ng-click="ScanDocumentoGrid.post();" onclick="(!ScanDocumentoGrid.missingRequiredField()?$('#modalScanDocumentoGrid').modal('hide'):void(0))">{{'Save' | translate}}</button>
+                    <button type="button" class="btn btn-default" data-component="crn-button" data-dismiss="modal">{{'Home.view.Close' | translate}}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- OneToOne modal end-->
